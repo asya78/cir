@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Controller;
 
+use CirTuSofiaBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,4 +16,6 @@ class SecurityController extends Controller
     {
         return $this->render('security/login.html.twig');
     }
+
+
 }

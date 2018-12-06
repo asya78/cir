@@ -1,40 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6565d265-ff7c-480a-a482-a9fdf615229a" name="Default Changelist" comment="" />
+    <list default="true" id="6565d265-ff7c-480a-a482-a9fdf615229a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="cir: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1795845056">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.288" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="6" />
           <entry key="dummy" value="16" />
-          <entry key="php" value="95" />
-          <entry key="twig" value="812" />
+          <entry key="php" value="242" />
+          <entry key="twig" value="928" />
+          <entry key="txt" value="3" />
           <entry key="yml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="PHP" value="95" />
-          <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Twig" value="812" />
+          <entry key="PHP" value="242" />
+          <entry key="PLAIN_TEXT" value="19" />
+          <entry key="Twig" value="928" />
           <entry key="YAML" value="7" />
         </counts>
       </usages-collector>
@@ -43,8 +84,9 @@
           <entry key="css" value="2" />
           <entry key="js" value="1" />
           <entry key="json" value="1" />
-          <entry key="php" value="4" />
-          <entry key="twig" value="3" />
+          <entry key="php" value="9" />
+          <entry key="sql" value="1" />
+          <entry key="twig" value="5" />
           <entry key="yml" value="4" />
         </counts>
       </usages-collector>
@@ -53,73 +95,21 @@
           <entry key="CSS" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="4" />
-          <entry key="Twig" value="3" />
+          <entry key="PHP" value="9" />
+          <entry key="Scratch" value="1" />
+          <entry key="Twig" value="5" />
           <entry key="YAML" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding>
-                <element signature="e#791#821#0#Twig" />
-                <element signature="e#3329#3366#0#Twig" />
-                <element signature="e#3618#3624#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="161" selection-start-line="161" selection-end-line="164" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-                <element signature="n#section#0;n#!!top" />
-                <element signature="e#1970#1977#1#HTML" expanded="true" />
-                <element signature="n#section#1;n#!!top" />
-                <element signature="n#section#2;n#!!top" />
-                <element signature="n#section#3;n#!!top" />
-                <element signature="e#29316#30457#0#HTML" />
-                <element signature="e#30493#31629#0#HTML" />
-                <element signature="e#31665#32818#0#HTML" />
-                <element signature="e#32854#33983#0#HTML" />
-                <element signature="e#34019#35165#0#HTML" />
-                <element signature="e#35201#36350#0#HTML" />
-                <element signature="e#36386#37516#0#HTML" />
-                <element signature="e#37552#38684#0#HTML" />
-                <element signature="e#38720#39844#0#HTML" />
-                <element signature="e#39974#41116#0#HTML" />
-                <element signature="e#41148#42290#0#HTML" />
-                <element signature="e#42322#43464#0#HTML" />
-                <element signature="e#43496#44638#0#HTML" />
-                <element signature="e#44670#45812#0#HTML" />
-                <element signature="e#45844#46986#0#HTML" />
-                <element signature="e#47018#48160#0#HTML" />
-                <element signature="e#48192#49333#0#HTML" />
-                <element signature="e#49471#54945#0#HTML" />
-                <element signature="e#54980#59468#0#HTML" />
-                <element signature="e#59504#62161#0#HTML" />
-                <element signature="e#62196#64143#0#HTML" />
-                <element signature="e#64178#66937#0#HTML" />
-              </folding>
+            <state relative-caret-position="-765">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -127,44 +117,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
               <folding>
                 <element signature="e#47#104#0#PHP" expanded="true" />
-                <element signature="e#442#467#0#PHP" expanded="true" />
+                <element signature="e#381#406#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/CirTuSofiaBundle.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="340">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
-                <element signature="e#47#104#0#PHP" expanded="true" />
-                <element signature="e#295#321#1#PHP" expanded="true" />
+                <element signature="e#47#80#0#PHP" expanded="true" />
+                <element signature="e#390#416#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -177,6 +164,9 @@
       <replace>CirTuSofiaBundle</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -184,11 +174,15 @@
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" />
       </list>
     </option>
   </component>
@@ -247,12 +241,12 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,21 +315,19 @@
             <path>
               <item name="cir" type="b2602c69:ProjectViewProjectNode" />
               <item name="cir" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cir" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cir" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="CirTuSofiaBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/console" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -374,24 +366,20 @@
       <option name="presentableId" value="Default" />
       <updated>1544092468189</updated>
       <workItem from="1544092469475" duration="11886000" />
+      <workItem from="1544108438716" duration="2011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11886000" />
+    <option name="totallyTimeSpent" value="13897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.4989339" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5010661" side_tool="true" weight="0.329718" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
@@ -399,10 +387,15 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840087" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159913" side_tool="true" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,104 +442,93 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding>
-            <element signature="e#47#104#0#PHP" expanded="true" />
-            <element signature="e#442#467#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="2737">
+          <caret line="161" selection-start-line="161" selection-end-line="164" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/CirTuSofiaBundle.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#47#104#0#PHP" expanded="true" />
-            <element signature="e#295#321#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="161" selection-start-line="161" selection-end-line="164" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="n#section#0;n#!!top" />
-            <element signature="e#1970#1977#1#HTML" expanded="true" />
-            <element signature="n#section#1;n#!!top" />
-            <element signature="n#section#2;n#!!top" />
-            <element signature="n#section#3;n#!!top" />
-            <element signature="e#29316#30457#0#HTML" />
-            <element signature="e#30493#31629#0#HTML" />
-            <element signature="e#31665#32818#0#HTML" />
-            <element signature="e#32854#33983#0#HTML" />
-            <element signature="e#34019#35165#0#HTML" />
-            <element signature="e#35201#36350#0#HTML" />
-            <element signature="e#36386#37516#0#HTML" />
-            <element signature="e#37552#38684#0#HTML" />
-            <element signature="e#38720#39844#0#HTML" />
-            <element signature="e#39974#41116#0#HTML" />
-            <element signature="e#41148#42290#0#HTML" />
-            <element signature="e#42322#43464#0#HTML" />
-            <element signature="e#43496#44638#0#HTML" />
-            <element signature="e#44670#45812#0#HTML" />
-            <element signature="e#45844#46986#0#HTML" />
-            <element signature="e#47018#48160#0#HTML" />
-            <element signature="e#48192#49333#0#HTML" />
-            <element signature="e#49471#54945#0#HTML" />
-            <element signature="e#54980#59468#0#HTML" />
-            <element signature="e#59504#62161#0#HTML" />
-            <element signature="e#62196#64143#0#HTML" />
-            <element signature="e#64178#66937#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        <state relative-caret-position="255">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
-            <element signature="e#791#821#0#Twig" />
-            <element signature="e#3329#3366#0#Twig" />
-            <element signature="e#3618#3624#0#HTML" expanded="true" />
+            <element signature="e#1270#3763#0#Twig" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b14a974c-a59a-4bb9-9a48-c06d3310cea0/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="119">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#47#104#0#PHP" expanded="true" />
+            <element signature="e#381#406#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="e#42#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#47#80#0#PHP" expanded="true" />
+            <element signature="e#390#416#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

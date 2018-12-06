@@ -5,7 +5,14 @@
     {% block title %} - Вход {% endblock %}
     <style type="text/css">
         .navbar-default {background-color: #4394b1;}
+        .navbar-default .navbar-brand {color:#feca65;}
     </style>
+{% endblock %}
+
+{% block header %}
+    {{ parent() }}
+    {% block nav_title %} Център за Информационно обслужване
+    {% endblock %}
 {% endblock %}
 
 {% block body %}
