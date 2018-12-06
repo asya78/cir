@@ -1,0 +1,1180 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text"></div>
+        </div>
+    </header>
+    <!-- Directions Section -->
+    <section id="directions">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Направления</h2>
+                    <h3 class="section-subheading text-muted"> Центърът за информационни ресурси (ЦИР) има три направления:</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <p></p>
+                <div class="col-md-4">
+                    <div align="center">
+                        <img class="img-circle img-responsive" src="img/directions/ict.jpg" alt="">
+                    </div>
+                    <h4 class="directions-heading">Информационна мрежа и комуникации</h4>
+                    <p class="text-muted"> "Информационна мрежа и комуникации" (ИМК) поддържа, администрира и развива компютърната мрежа на ТУ и връзката и с глобалната мрежа INTERNET, всички сървъри и работни станции на територията на ЦИР осигуряващи предлаганите мрежови услуги, като електронна поща, отдалечени комуникации, маршрутизатори и т.н.</p>
+                    <!-- ЕКИП -->
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ictTeam">Екип</button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ictTeam" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Информационна мрежа и комуникации</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <table id="res" class="footable toggle-arrow-tiny">
+                                            <thead>
+                                            <tr>
+                                                <th>Име</th>
+                                                <th data-hide="phone , tablet">Длъжност</th>
+                                                <th data-hide="phone , tablet">Мобилен</th>
+                                                <th data-hide="phone , tablet">Кабинет</th>
+                                                <th data-hide="phone , tablet">Телефон</th>
+                                                <th data-hide="phone , tablet">Е-mail</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Любен Юриев Попов</td>
+                                                <td>Ръководител направление</td>
+                                                <td>089 55 88 747</td>
+                                                <td>4239</td>
+                                                <td>965 3981</td>
+                                                <td>lup@tu-sofia.bg</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Юрий Василев Градинарски</td>
+                                                <td>Мрежови администратор</td>
+                                                <td>089 33 41 895</td>
+                                                <td>2110</td>
+                                                <td>965 3041</td>
+                                                <td>yuriy@tu-sofia.bg</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="modal-info">Специалистите от направлението осигуряват поддръжката и развитието на комуникационните възли и връзките към отдалечените звена на ТУ.Оказват техническа помощ, консултации и препоръки за поддържане и развитие на техническите, мрежовите и програмните системи и ресурси във факултетите, департаменти и самостоятелните звена.Направлението се грижи за сигурността на мрежата и услугата отдалечен достъп, развитието и поддръжката на мрежовите услуги в ТУ-нет, като улеснява и подобрява информационното обслужване на потребителите.
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+
+                <div class="col-md-4">
+                    <div align="center">
+                        <img class="img-circle img-responsive" src="img/directions/io.jpg" alt="">
+                    </div>
+                    <h4 class="directions-heading">Информационно обслужване</h4>
+                    <p class="text-muted">"Информационно обслужване" (ИО) разработва, внедрява и съпровожда специфични за университета ИС, свързани с обслужване на някои от дейностите в ТУ - София: учебна и административни. Проучва, внедрява и съпровожда готови ИС за дейности, за които те са приложими. Осигурява системно поддържане и актуализация на главния WEB сървър на ТУ. Разработва WEB базирани ИС.</p>
+                </div>
+                <p></p>
+                <div class="col-md-4">
+                    <div align="center">
+                        <img class="img-circle img-responsive" src="img/directions/computer-room.jpg" alt="">
+                    </div>
+                    <h4 class="directions-heading">Обслужване на учебния процес в компютърните зали на ЦИР</h4>
+                    <p class="text-muted">"Обслужване на учебния процес в компютърните зали на ЦИР” (ОУП) осигурява обслужването и нормалното протичане на учебния процес в компютърните зали на ЦИР.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Аctivities Section -->
+    <section id="activities" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Дейности</h2>
+                    <h3 class="section-subheading text-muted">свързани с нуждите на ТУ-СОФИЯ</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal1" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/tb_tusite.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Главен сайт</h4>
+                        <p class="text-muted">www.tu-sofia.bg<br /></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal2" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/tb_network.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Мрежа</h4>
+                        <p class="text-muted">www.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal3" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/tb_priem.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Кандидат-студентски сайт</h4>
+                        <p class="text-muted">priem.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal4" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/mail.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Поща</h4>
+                        <p class="text-muted">mail.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal5" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/tusmail.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Поща на студентите</h4>
+                        <p class="text-muted">tusmail.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal6" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/tb_telbook.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Телефонен Указател</h4>
+                        <p class="text-muted">tel.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal7" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/zop.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Обществени поръчки</h4>
+                        <p class="text-muted">zop.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal8" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/tb_uiss.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>УИСС</h4>
+                        <p class="text-muted">student.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 activities-item">
+                    <a href="#activityModal9" class="activities-link" data-toggle="modal" target="_blank">
+                        <div class="activities-hover">
+                            <div class="activities-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/activities/eudoroam.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="activities-caption">
+                        <h4>Eduroam</h4>
+                        <p class="text-muted">eduroam.tu-sofia.bg</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Halls Section -->
+    <section id="halls">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Зали</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal1" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>2101А</h4>
+                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal2" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>2101B</h4>
+                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal3" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>2101Г</h4>
+                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal4" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>2108А</h4>
+                        <p class="text-muted">Брой места: 20 <br />Проектор: да</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal5" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>2108Б</h4>
+                        <p class="text-muted">Брой места: 20 <br />Проектор: да</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal6" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>4130А</h4>
+                        <p class="text-muted">Брой места: 15 <br />Проектор: не</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal7" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>4130Б</h4>
+                        <p class="text-muted">Брой места: 15 <br />Проектор: не</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 halls-item">
+                    <a href="#hallModal8" class="halls-link" data-toggle="modal" target="_blank">
+                        <div class="halls-hover">
+                            <div class="halls-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="halls-caption">
+                        <h4>4132</h4>
+                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">История</h2>
+                    <h3 class="section-subheading text-muted">Центърът за информационни ресурси (ЦИР) е наследник на създадения на 6 май 1970 г. с протокол № 8 на академичния съвет на ВМЕИ „В. И. Ленин“ Учебно Изчислителен Център (УИЦ), преобразуван през 1984 г. в Учебно Изчислителен Комплекс (УИК), а през 1998 г. в ЦИР. Това е първия по рода си изчислителен център на ВУЗ в България и е имал за цел да обслужва, както учебния и научноизследователския процес, така и административните нужди на университета.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+
+                        <li>
+                            <div class="timeline-image">
+                                <a href="#historyModal1" class="activities-link" data-toggle="modal"> <img class="img-circle img-responsive" src="img/history/Stoichev.jpg" alt=""> </a>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4><a href="#historyModal1" class="activities-link" data-toggle="modal">
+                                            <div class="activities-hover"><div class="activities-hover-content"></div></div>
+                                            Първи стъпки
+                                        </a>
+                                    </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Проф. дтн Стойчо Димитров Стойчев е първия директор на Учебно изчислителния център и по това време е един от малкото специалисти в областта на изчислителната техника.<br>
+                                        Като преподавател в катедра “Електроника” работи активно за създаването на центъра. Задачата му е била възложена от проф. д.т.н. Йордан Боянов, тогава зам. ректор и ръководител катедра “Електроника” и ректора чл. кор. проф. Н. Наплатанов.<br>
+                                        <a href="#historyModal1" class="activities-link" data-toggle="modal">още... </a></p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <a href="#historyModal2" class="activities-link" data-toggle="modal"><img class="img-circle img-responsive" src="img/history/ES-1020_small.jpg" alt=""> </a>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4><a href="#historyModal2" class="activities-link" data-toggle="modal">
+                                            <div class="activities-hover"><div class="activities-hover-content"></div></div>
+                                            ПЪРВИ ЗАДАЧИ И ДЕЙНОСТИ
+                                        </a>
+                                    </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Една от първите задачи разработена на М-220М, е Автоматизирана система за заплати на ВМЕИ ”Ленин” – изцяло разработена и експлоатирана от колектива на УИЦ. Основните програмисти са Лука Луков, Агоп Хачикян и Весела Пашева.<br>
+                                        <a href="#historyModal2" class="activities-link" data-toggle="modal">още...</a></p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-image">
+                                <a href="#historyModal3" class="activities-link" data-toggle="modal"><img class="img-circle img-responsive" src="img/history/ukm.jpg" alt=""></a>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4><a href="#historyModal3" class="activities-link" data-toggle="modal">
+                                            <div class="activities-hover"><div class="activities-hover-content"></div></div>
+                                            УКМ
+                                        </a>
+                                    </h4>
+                                    <h4 class="subheading">УНИВЕРСИТЕТСКА КОМПЮТЪРНА МРЕЖА</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">През 1992 г. в УИК се внедрява Интернет (протоколи TCP и IP) и електронна поща в ВМЕИ-София чрез изграждане на хетерогенна компютърна мрежа (машини VAX-11-750 с терминали и персонални компютри) и първа арендувана връзка с глобалната академична мрежа. Ректорът проф. Д. Димитров заявява начало на участие на ТУ-София в сдружението за академични комуникации УНИКОМ-Б с председател Акад. проф. К. Боянов чрез представител на университета - директора на УИК Вл. Л. Станчев. В следващите годни с развитие на мрежата започват да се разработват първите университетски сайтове.<br>
+                                        <a href="#historyModal3" class="activities-link" data-toggle="modal">още...</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <a href="#historyModal4" class="activities-link" data-toggle="modal"><img class="img-circle img-responsive" src="img/history/dir.jpg" alt=""></a>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4><a href="#historyModal4" class="activities-link" data-toggle="modal">
+                                            <div class="activities-hover"><div class="activities-hover-content"></div></div>
+                                            Директори
+                                        </a>
+                                    </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">През изминалите години центърът е бил ръководен от няколко директори, като всеки от тях е допринесъл за развитието и издигане на ролята му.<br>
+                                        <a href="#historyModal4" class="activities-link" data-toggle="modal">още...</a></p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="timeline-image">
+                                <a href="#historyModal5" class="activities-link" data-toggle="modal"><img class="img-circle img-responsive" src="img/history/dirs.jpg" alt=""> </a>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4><a href="#historyModal5" class="activities-link" data-toggle="modal">
+                                            <div class="activities-hover"><div class="activities-hover-content"></div></div>
+                                            Настоящо ръководство
+                                        </a>
+                                    </h4>
+                                    <h4 class="subheading"></h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Директор направление.<br>
+                                        <a href="#historyModal5" class="activities-link" data-toggle="modal">още...</a></p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Modals -->
+    <!-- Use the modals below to showcase details about your Аctivities! -->
+
+    <!-- Activity Modal 1 -->
+    <div class="activities-modal modal fade" id="activityModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Главен сайт на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/tb_tusite.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 2 -->
+    <div class="activities-modal modal fade" id="activityModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Мрежа на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/tb_network.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 3 -->
+    <div class="activities-modal modal fade" id="activityModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Кандидат-студентски сайт на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/tb_priem.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 4 -->
+    <div class="activities-modal modal fade" id="activityModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Поща на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/mail.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 5 -->
+    <div class="activities-modal modal fade" id="activityModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Поща на студентите на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/tusmail.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 6 -->
+    <div class="activities-modal modal fade" id="activityModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Телефонен указател на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/tb_telbook.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 7 -->
+    <div class="activities-modal modal fade" id="activityModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Обществени поръчки</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/zop.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 8 -->
+    <div class="activities-modal modal fade" id="activityModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>УИСС на ТУ-София</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/tb_uiss.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Modal 9 -->
+    <div class="activities-modal modal fade" id="activityModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Eduroam</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/activities/eudoroam.png" alt="">
+                            <p>.....информация...</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modals -->
+    <!-- Use the modals below to showcase details about your Halls! -->
+
+    <!-- Hall Modal 1 -->
+    <div class="halls-modal modal fade" id="hallModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>2101A</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 2 -->
+    <div class="halls-modal modal fade" id="hallModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>2101B</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 3 -->
+    <div class="halls-modal modal fade" id="hallModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>2101Г</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 4 -->
+    <div class="halls-modal modal fade" id="hallModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>2108A</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 5 -->
+    <div class="halls-modal modal fade" id="hallModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>2101Б</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 6 -->
+    <div class="halls-modal modal fade" id="hallModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>4130А</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 7 -->
+    <div class="halls-modal modal fade" id="hallModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>4130Б</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hall Modal 8 -->
+    <div class="halls-modal modal fade" id="hallModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>4132</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/halls/computer-room.jpg" alt="">
+                            <p>График на учебната зала:<br />Направете заявка:</p>
+
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modals -->
+    <!-- Use the modals below to showcase details about your history! -->
+
+    <!-- History Modal 1 -->
+    <div class="activities-modal modal fade" id="historyModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Първи стъпки</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/history/prof.StoichoStoichev.jpg" alt="">
+                            <p>Проф. дтн Стойчо Димитров Стойчев е първия директор на Учебно изчислителния център и по това време е един от малкото специалисти в областта на изчислителната техника. Като преподавател в катедра “Електроника” работи активно за създаването на центъра. Задачата му е била възложена от проф. д.т.н. Йордан Боянов, тогава зам. ректор и ръководител катедра “Електроника” и ректора чл. кор. проф. Н. Наплатанов.
+                                <br>На международно съвещание проф. Стойчев научава от руски колеги за най-новата руска изчислителна машина
+                                М-220М. Написва доклад до ректора, в който посочва, че за нуждите на университета са необходими 2 машини М-220М.
+                                <br>През 1969 г. е закупена само една М-220М и оставена в големи сандъци на двора между 1-ви и 2-ри блок. Там престояват известно време изложени на капризите на природата.
+                                <br>През същата 1969 г. са направени постъпки пред Министерство на просветата за отпускане на щат за УИЦ.
+                                Проф. Стойчев е назначен на 20.11.1969 г. за директор със задача
+                                да разработи проект за изграждане на УИЦ (преустройство на северното крило на 1-ия етаж в
+                                блок 2), да се назначи основен персонал и да се премести и монтира машината.
+                                Целият проект е осъществен чрез НИС със стойност около 1.5 млн. лева, включително
+                                цената на машината (около 1 млн. лева). Назначени са няколко инженери, програмисти и техници (без много опит в областта на изчислителната техника). За главен инженер е назначен инж. Емил Лазаров, единствен със специалност „Изчислителна техника”.
+                                <br>В началото на 1970 г. руски специалисти от гр. Казан, инсталират изчислителната машина и провеждат обучение на персонала за експлоатацията
+                                на М-220М.
+
+                                На 8 август 1970 г. първата ЕИМ в УИЦ е пусната в редовна експлоатация. М-220М е произведена в Казанския завод ЭВМ. Тя е машина второ поколение (на транзистори), с производителност 18000 – 20000 операции в секунда; оперативна памет 8К, 48-разрядни думи; външни запомнящи устройства – магнитен барабан с 48К думи; 4 запомнящи устройства на магнитни ленти с обща памет 4000 000 думи.M - 220
+                                Разполагала е с наличен софтуер - транслатор от Автокод на машинен език, транслатор от алгоритмичен език ALGOL-60 с набор от стандартни програми.
+                                В България е имало само две такива машини – във ВМЕИ “Ленин” и в “НИПКИЕС” Енергопроект.
+                                Един от първите и най-редовни потребители на изчислителния център е проф. Любен Панов, преподавател във ВМЕИ-София, завършил през 1951 г. с отличие Държавната
+                                политехника в София, специалност “Самолетостроене”.
+                                prof. Liuben Panov   Проф. Л. Панов е. дълбоко убеден в необходимостта от използване на изчислителна техника в инженерните изследвания и полага много усилия за обучение по програмиране на специализанти и студенти от ВМЕИ. Създава и провежда първия курс по “Теория и практика на използването на ЕИМ”, който е в основата на обучението по програмиране за инженерните специалности в университета ни. Работи по допълването на набора от стандартни програми за М-220М. Под негово ръководство и пряко участие, за първи път в България, са разработени нови стандартни програми, използвани за обучение на студентите по дисциплините в катедра “Хидродинамика” и на следдипломната квалификация на блока “Б” в ЦПМ (Център по приложна математика) . Става инициатор и участва в написването на учебните пособия “Въведение в програмирането”, “Програмиране на Бейсик и някои числени методи”, “Практикум върху числените методи в механика на флуидите”.
+                                За цялостния му принос, от 1998 г. ЦИР носи името на проф. Любен Янакиев Панов.
+                                Постепенно потребителите на центъра са се увеличавали. Решавали са се изследователски задачи, а по-късно и в учебния процес е започнала да  навлиза новата техника. Съвместно с катедра “ЕИМ и устройства” са се провеждали курсове по програмиране за преподавателите в университета.<p>
+
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal 2 -->
+    <div class="activities-modal modal fade" id="historyModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>ПЪРВИ ЗАДАЧИ И ДЕЙНОСТИ</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/history/ES-1020_small.jpg" alt="">
+                            <p>М-220МLuka Lukov
+                                Една от първите задачи разработена на М-220М, е Автоматизирана система за заплати на ВМЕИ ”Ленин” – изцяло разработена и експлоатирана от колектива на УИЦ. Основните програмисти са Лука Луков, Агоп Хачикян и Весела Пашева.
+                                ЕИМ ЕС-1020
+                                ES-1020   През 1976 г. на машината ЕС1020 (операционна система – DOS) се разработва и внедрява система за класиране и прием на студенти от техническите висши учебни заведения.
+                                През 1985 г. прераства в национална КСК (Кандидат студентска кампания). Тя се осъществява от секцията информационно осигуряване към ЦПМ, с тогавашен зам. ректор Петър Пенчев и ръководител на проекта проф. Румяна Цанкова. През 1979 г. УИЦ се отделя от ЦПМ. В същата година се разработва и внедрява АСУ (Автоматизирана система за управление) на учебно-възпитателния процес.
+                                ЕС1020 се използва в пакетен режим в учебния процес – всеки студент през семестъра е трябвало да мине през УИЦ за да реши определена задача с помощта на ЕИМ.
+                                ЕИМ ЕС-1033
+                                eim-es-1033   Операционна система – OS. Това е първата многозадачна операционна система. За пускането на задачите и управлението на програмите има разработен специален език JCL (Job Control Language). Транслатори от Assembler, Fortran– 4, PL/1, COBOL.
+
+
+
+                                ЕИМ ИЗОТ-0310
+                                eim-izot-0310PDP-8   Отново една от първите в България, които ползват в учебния процес ЕИМ ИЗОТ - 0310 (около 8 бр. машини) за студентите на ВМЕИ в УИЦ. Характерно за тези машини е, че са едни от първите персонални компютри. Студентите имат възможност да работят самостоятелно на пулта с цялата машина. Операционната система е DOS – Дискова операционна система. Транслаторите от Assembler, BASIC, Fortran – 4.
+                                В центърът за 40 години са използвани много генерации изчислителни машини.
+                                М-220М (съветска); ЕИМ ЕС-1020 (българска); ЕИМ ЕС-1033 (съветска); МЕИМ ИЗОТ 0310, VAX 750; персонални компютри: ИМКО 1 (два от първите 30 бр. В БГ.); ИМКО 2; Правец 8; Правец 16; ИЗОТ 1604; ИЗОТ 220, 250; ИЗОТ 310, Правец 82, Правец 8М, PDP 8, IBM 386, IBM 486, Apple PC, IBM PC, до днешните съвременни персонални компютри.
+                                VladimirStanchevIordankaCvetkova   С навлизането на персоналните компютри се проектира и разработва “Академична система за информация и статистика” – АСИС*89. Тя е първата общоуниверситетска мрежова диалогова информационна система за управление на учебния процес внедрена в ВМЕИ-София от 1989 г. и действаща до 2007 г. Обхваща данните за учебния процес по факултети, чрез мрежа от персонални компютри с факултетен файлов сървър. Разработката е с основен колектив Вл. Л. Станчев и мат. Цв. Шентова. Неин аналог е днешната система УИСС (Университетска Информационна Система – Студент) за работа в мрежа, разработена на ORACLE. През 2002 г. е внедрена в експлоатация по факултетите. От 2000 г. се използва система за прием на кандидат-студенти в ТУ-София, разработена също на ORACLE. Двете системи са създадени от екип на ЦИР под ръководството на мат. Йорданка Цветкова, студентите Д. Баргански, К. Заимов и др. В реализацията на системите участва и „Учебен отдел” с началник мат. Спасен Цветков.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- History Modal 3 -->
+    <div class="activities-modal modal fade" id="historyModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>УКМ</h2>
+                            <p class="item-intro text-muted">УНИВЕРСИТЕТСКА КОМПЮТЪРНА МРЕЖА</p>
+                            <img class="img-responsive img-centered" src="img/history/ukm.jpg" alt="">
+                            <p>През 1992 г. в УИК се внедрява Интернет (протоколи TCP и IP) и електронна поща в ВМЕИ-София чрез изграждане на хетерогенна компютърна мрежа (машини VAX-11-750 с терминали и персонални компютри) и първа арендувана връзка с глобалната академична мрежа. Ректорът проф. Д. Димитров заявява начало на участие на ТУ-София в сдружението за академични комуникации УНИКОМ-Б с председател Акад. проф. К. Боянов чрез представител на университета - директора на УИК Вл. Л. Станчев. В следващите годни с развитие на мрежата започват да се разработват първите университетски сайтове.
+                                С проекта JEP 07878 по TEMPUS програмата на ЕО настъпва коренна промяна на техническото оборудване, изграждане на съвременна корпоративна мрежа на ТУ-София, СУ, УНСС и свързването им с мрежите на БАН и ИНТЕРНЕТ.
+                                В резултат на този проект са изградени трите опорни университетски мрежи свързани в обща пилотна мрежа получила името БАНЕТ. Опорната мрежа в Технически университет представлява оптичен ринг с дължина 2 км., който свързва всички сгради на ТУ. Използвана е модерна тогава FDDI технология със 100 МБ скорост на предаването на данните. Във всяка сграда е създаден комуникационенвъзел, позволяващ включването на потребителите от всички сгради към опорната мрежа. Изграждането на цялостна инфраструктура на университетска компютърна мрежа е направена с друг проект финансиран от МОН.
+                                Основно участие за реализирането имат инж. Лариса Любенова и инж. Феб Павлов.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal 4 -->
+    <div class="activities-modal modal fade" id="historyModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Директори</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/history/dir.jpg" alt="">
+                            <p>Първият директор е проф. Стойчо Стойчев, след него маг. инж. Емил Лазаров, маг. инж. Петьо Петев, проф. Денчо Батанов, маг. ик. Владимир Станчев, маг. инж. Лариса Любенова, маг. инж. Феб Павлов и настоящ маг. инж. Стефка Попова.
+                                Един от успешните директори на изчислителния център е доц.д-р Денчо Батанов (сега професор). Той е ръководител на центъра от 1978 до 1992 година. През този период УИЦ се разраства, достига 120 души персонал и се разкриват локални центрове. През 1984 г. той създава катедра „Програмиране и използване на изчислителни системи“ (ПИИС). Първоначално в състава на катедрата влизат много от младите специалисти на УИЦ. През 1984 г. Учебно изчислителния център (УИЦ) променя статута си в Учебно изчислителен комплекс (УИК), обединяващ главния (ГУИЦ) и локалните центрове в първи и четвърти блок.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal 5 -->
+    <div class="activities-modal modal fade" id="historyModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Настоящо ръководство</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-responsive img-centered" src="img/history/dirс.jpg" alt="">
+                            <table id="res" class="footable toggle-arrow-tiny">
+                                <thead>
+                                <tr>
+                                    <th>Име</th>
+                                    <th data-hide="phone , tablet">Длъжност</th>
+                                    <th data-hide="phone , tablet">Мобилен</th>
+                                    <th data-hide="phone , tablet">Кабинет</th>
+                                    <th data-hide="phone , tablet">Телефон</th>
+                                    <th data-hide="phone , tablet">Е-mail</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Стефка Николова Попова</td>
+                                    <td>Директор направление</td>
+                                    <td>089 55 88 796</td>
+                                    <td>2103б</td>
+                                    <td>965 2646</td>
+                                    <td>stefka@tu-sofia.bg</td>
+                                </tr>
+                                <tr>
+                                    <td>Седефка Василева Георгиева</td>
+                                    <td>Технически организатор</td>
+                                    <td>089 55 90 586</td>
+                                    <td>2103а</td>
+                                    <td>965 2486</td>
+                                    <td>sedefka@tu-sofia.bg</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
