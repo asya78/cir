@@ -20,8 +20,9 @@
             <link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css') }}">
             <!-- Scroll To Top CSS -->
             <link rel="stylesheet" href="{{ asset('css/backTop.css') }}">
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
         {% endblock %}
     </head>
     <body id="page-top" class="index">
@@ -90,18 +91,14 @@
     {% endblock %}
 
         {% block javascripts %}
+
+            <a id='backTop'>Back To Top</a>
+
             <!-- jQuery -->
             <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 
             <!-- FooTable jQuery Plugin -->
             <script src="{{ asset('js/footable.js') }}" type="text/javascript"></script>
-
-            <!-- Initialize FooTable -->
-            <script type="text/javascript">
-                $(function () {
-                    $('table').footable();
-                });
-            </script>
 
             <!-- Bootstrap Core JavaScript -->
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -112,21 +109,14 @@
             <script src="{{ asset('js/cbpAnimatedHeader.js') }}"></script>
             <script src="{{ asset('js/moment.min.js') }}"></script>
 
+            <!-- Scroll To Top jQuery Plugin -->
+            <script src="{{ asset('js/jquery.backTop.min.js') }}"></script>
+
             <!-- Custom Theme JavaScript -->
             <script src="{{ asset('js/main.js') }}"></script>
             <script src="{{ asset('js/pop-up.js') }}"></script>
 
-            <!-- Scroll To Top jQuery Plugin -->
-            <script src="{{ asset('js/jquery.backTop.min.js') }}"></script>
-            <script>
-                $(document).ready( function() {
-                    $('#backTop').backTop({
-                        'position' : 1600,
-                        'speed' : 500,
-                        'color' : 'blue',
-                    });
-                });
-            </script>
+
 
         {% endblock %}
     </body>
