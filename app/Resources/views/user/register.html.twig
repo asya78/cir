@@ -1,17 +1,46 @@
-{%  extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block header %}
+{% endblock %}
 
 {% block body %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <form name="register" action="{{ path('user_register') }}" method="post">
-                    <label>Email: </label><input type="text" name="user[email]" /></label><br>
-                    <label> Password: <input type="text" name="user[password]" /></label><br>
-                    <label>Full Name: <input type="text" name="user[fullName]" /></label><br>
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}"/><br>
-                    <input type="submit" value="Register"/><br>
-                </form>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 login-img">
+                <div class="intro-text"></div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="login-form">
+                        <form name="register" action="{{ path('user_register') }}" method="post">
+                            <h2 class="text-center">Регистрация</h2>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="eл. поща" name="user[email]" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="парола" name="user[password]" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="име" name="user[fullName]" />
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}" />
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block" > Регистрация </button>
+                            </div>
+                            <div class="clearfix text-center">
+                                <a href="{{ path('security_login') }}">Вход </a> |
+                                <a href="{{ path('cir_index') }}">Начало</a>
+                            </div>
+                        </form>
+                        <p class="text-center"></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
 {% endblock %}

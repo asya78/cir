@@ -1,32 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block head %}
-    {{ parent() }}
-    {% block title %} - Вход {% endblock %}
-    <style type="text/css">
-        /*.navbar-default {background-color: #4394b1;}*/
-        /*.navbar-default .navbar-brand {color:#feca65;}*/
-    </style>
-{% endblock %}
-
 {% block header %}
-    {{ parent() }}
-    {% block nav_title %} Център за Информационно обслужване
-    {% endblock %}
 {% endblock %}
 
 {% block body %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <form name="authenticate" action="{{ path('security_login') }}" method="post">
-                    <input type="text" name="_username" />
-                    <input type="text" name="_password" />
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-                    <input type="submit" value="Login" />
-                </form>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 login-img">
+                <div class="intro-text"></div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="login-form">
+                        <form name="authenticate" action="{{ path('security_login') }}" method="post">
+                            <h2 class="text-center">Вход</h2>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="eл. поща" name="_username" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="парола" name="_password" />
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block" > Вход </button>
+                            </div>
+                            <div class="clearfix text-center">
+                                <a href="{{ path('user_register') }}">Регистрация </a>|
+                                <a href="{{ path('cir_index') }}"> Начало</a>
+                            </div>
+                        </form>
+                        <p class="text-center"></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
+{% endblock %}
+
+{% block footer %}
 {% endblock %}
