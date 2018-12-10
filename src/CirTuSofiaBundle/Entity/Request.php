@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -50,7 +51,14 @@ class Request
     private $description;
 
     /**
-     * @ORM\OneToOne(targetEntity="CirTuSofiaBundle\Entity\Hall")
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string")
+     */
+    private $status;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CirTuSofiaBundle\Entity\Hall",inversedBy="requests")
      * @ORM\JoinColumn(name="hall_id",referencedColumnName="id")
      */
     private $hall;
@@ -166,6 +174,60 @@ class Request
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     * @return Request
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHall()
+    {
+        return $this->hall;
+    }
+
+    /**
+     * @param $hall
+     * @return Request
+     */
+    public function setHall($hall)
+    {
+        $this->hall = $hall;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus(string $status)
+    {
+        $this->status = $status;
     }
 }
 

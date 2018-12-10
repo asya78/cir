@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6565d265-ff7c-480a-a482-a9fdf615229a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b14a974c-a59a-4bb9-9a48-c06d3310cea0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b14a974c-a59a-4bb9-9a48-c06d3310cea0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Problem.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Problem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,24 +35,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cir: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="cir@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="cir: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="halls: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -55,10 +42,11 @@
     <session id="1795845056">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.288" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -66,7 +54,7 @@
           <entry key="css" value="6" />
           <entry key="dummy" value="16" />
           <entry key="js" value="173" />
-          <entry key="php" value="832" />
+          <entry key="php" value="1217" />
           <entry key="twig" value="1181" />
           <entry key="txt" value="3" />
           <entry key="yml" value="10" />
@@ -76,7 +64,7 @@
         <counts>
           <entry key="CSS" value="6" />
           <entry key="JavaScript" value="173" />
-          <entry key="PHP" value="832" />
+          <entry key="PHP" value="1217" />
           <entry key="PLAIN_TEXT" value="19" />
           <entry key="Twig" value="1181" />
           <entry key="YAML" value="10" />
@@ -84,25 +72,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="SCHEMA:cir" value="3" />
           <entry key="css" value="2" />
           <entry key="js" value="5" />
           <entry key="json" value="1" />
-          <entry key="php" value="12" />
+          <entry key="php" value="16" />
           <entry key="sql" value="1" />
           <entry key="twig" value="11" />
-          <entry key="users" value="3" />
+          <entry key="users" value="4" />
           <entry key="yml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="Database Element" value="3" />
+          <entry key="Database Element" value="4" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="5" />
-          <entry key="PHP" value="12" />
+          <entry key="PHP" value="16" />
           <entry key="Scratch" value="1" />
           <entry key="Twig" value="11" />
+          <entry key="UML" value="3" />
           <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
@@ -158,26 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="58" column="84" selection-start-line="58" selection-start-column="84" selection-end-line="58" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+            <state relative-caret-position="1023">
+              <caret line="80" column="83" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
               <folding>
                 <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
@@ -186,35 +158,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+              <folding>
+                <element signature="e#43#91#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="uml://DATABASE/b14a974c-a59a-4bb9-9a48-c06d3310cea0.SCHEMA:cir">
           <provider selected="true" editor-type-id="UmlEditorProvider">
             <state>
               <ID>DATABASE</ID>
               <OriginalElement>b14a974c-a59a-4bb9-9a48-c06d3310cea0.SCHEMA:cir</OriginalElement>
               <nodes>
-                <node x="366.0" y="-30.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls</node>
-                <node x="97.5" y="275.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests</node>
-                <node x="-188.0" y="-14.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.users</node>
-                <node x="619.0" y="-15.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.problems</node>
+                <node x="39.25" y="0.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls</node>
+                <node x="185.5" y="256.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests</node>
+                <node x="224.25" y="44.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.users</node>
+                <node x="0.0" y="311.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.problems</node>
               </nodes>
               <notes />
               <edges>
+                <edge source="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.problems" target="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls">
+                  <point x="0.0" y="-48.0" />
+                  <point x="-41.25" y="103.0" />
+                </edge>
                 <edge source="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests" target="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.users">
-                  <point x="-41.75" y="-92.0" />
-                  <point x="139.25" y="231.0" />
-                  <point x="86.5" y="231.0" />
+                  <point x="41.75" y="-103.0" />
                   <point x="0.0" y="59.0" />
                 </edge>
                 <edge source="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests" target="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls">
-                  <point x="41.75" y="-92.0" />
-                  <point x="222.75" y="231.0" />
-                  <point x="275.5" y="231.0" />
-                  <point x="0.0" y="103.0" />
+                  <point x="-41.75" y="-103.0" />
+                  <point x="227.25" y="231.0" />
+                  <point x="163.0" y="231.0" />
+                  <point x="41.25" y="103.0" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="282.0" y="220.0" />
+              <settings layout="Hierarchic Group" zoom="1.0" x="-40.0" y="176.0" />
               <SelectedNodes>
-                <node>b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls</node>
+                <node>b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests</node>
               </SelectedNodes>
               <Categories>
                 <Category>Key columns</Category>
@@ -262,10 +257,10 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/hall/create.html.twig" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/HallController.php" />
-        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Problem.php" />
-        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php" />
+        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php" />
       </list>
     </option>
   </component>
@@ -275,7 +270,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.0">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/fig/link-util" />
       <path value="$PROJECT_DIR$/vendor/sensiolabs/security-checker" />
@@ -511,17 +506,17 @@
       <workItem from="1544304151810" duration="3980000" />
       <workItem from="1544386364065" duration="7747000" />
       <workItem from="1544415146438" duration="2280000" />
+      <workItem from="1544451265699" duration="4491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47405000" />
+    <option name="totallyTimeSpent" value="51896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -534,13 +529,13 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49840087" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840087" visible="true" weight="0.29609543" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.25135428" />
-      <window_info anchor="bottom" id="Database Console" order="12" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.1641791" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.1641791" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
@@ -642,13 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://b14a974c-a59a-4bb9-9a48-c06d3310cea0/schema/cir/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -667,13 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -726,42 +707,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Problem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/HallController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="e#47#104#0#PHP" expanded="true" />
-            <element signature="e#388#411#1#PHP" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b14a974c-a59a-4bb9-9a48-c06d3310cea0/schema/cir/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Problem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="33" column="82" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="58" column="84" selection-start-line="58" selection-start-column="84" selection-end-line="58" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="1023">
+          <caret line="80" column="83" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
           <folding>
             <element signature="e#43#91#0#PHP" expanded="true" />
           </folding>
@@ -774,34 +751,53 @@
           <ID>DATABASE</ID>
           <OriginalElement>b14a974c-a59a-4bb9-9a48-c06d3310cea0.SCHEMA:cir</OriginalElement>
           <nodes>
-            <node x="366.0" y="-30.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls</node>
-            <node x="97.5" y="275.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests</node>
-            <node x="-188.0" y="-14.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.users</node>
-            <node x="619.0" y="-15.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.problems</node>
+            <node x="39.25" y="0.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls</node>
+            <node x="185.5" y="256.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests</node>
+            <node x="224.25" y="44.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.users</node>
+            <node x="0.0" y="311.0">b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.problems</node>
           </nodes>
           <notes />
           <edges>
+            <edge source="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.problems" target="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls">
+              <point x="0.0" y="-48.0" />
+              <point x="-41.25" y="103.0" />
+            </edge>
             <edge source="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests" target="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.users">
-              <point x="-41.75" y="-92.0" />
-              <point x="139.25" y="231.0" />
-              <point x="86.5" y="231.0" />
+              <point x="41.75" y="-103.0" />
               <point x="0.0" y="59.0" />
             </edge>
             <edge source="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests" target="b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls">
-              <point x="41.75" y="-92.0" />
-              <point x="222.75" y="231.0" />
-              <point x="275.5" y="231.0" />
-              <point x="0.0" y="103.0" />
+              <point x="-41.75" y="-103.0" />
+              <point x="227.25" y="231.0" />
+              <point x="163.0" y="231.0" />
+              <point x="41.25" y="103.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="282.0" y="220.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-40.0" y="176.0" />
           <SelectedNodes>
-            <node>b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.halls</node>
+            <node>b14a974c-a59a-4bb9-9a48-c06d3310cea0.TABLE:cir.requests</node>
           </SelectedNodes>
           <Categories>
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding>
+            <element signature="e#43#91#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

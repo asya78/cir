@@ -51,6 +51,7 @@ class User implements UserInterface
      */
     private $requests;
 
+
     /**
      * Get id
      *

@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -68,6 +69,23 @@ class Hall
      * @var string
      */
     private $image;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Request",mappedBy="hall")
+     */
+    private $requests;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Problem",mappedBy="hall")
+     */
+    private $problems;
+
+    public function __construct()
+    {
+        $this->requests = new ArrayCollection();
+    }
 
 
     /**
@@ -238,6 +256,14 @@ class Hall
     public function setImage($image)
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRequests()
+    {
+        return $this->requests;
     }
 
 }
