@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -43,6 +44,12 @@ class User implements UserInterface
      */
     private $fullName;
 
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Request", mappedBy="user")
+     */
+    private $requests;
 
     /**
      * Get id
