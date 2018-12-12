@@ -69,6 +69,13 @@ class Hall
      */
     private $image;
 
+    /**
+     * @var User
+     * @ORM\ManyToOne(targetEntity="CirTuSofiaBundle\Entity\User",inversedBy="halls")
+     * @ORM\JoinColumn(name="userId", referencedColumnName="id")
+     */
+    private $user;
+
 
     /**
      * Get id
@@ -238,6 +245,25 @@ class Hall
     public function setImage($image)
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     * @return Hall
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
 }

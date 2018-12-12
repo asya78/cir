@@ -44,6 +44,12 @@ class User implements UserInterface
      */
     private $fullName;
 
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Hall",mappedBy="user")
+     */
+    private $halls;
+
 
     /**
      * @var ArrayCollection
@@ -183,6 +189,22 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getHalls()
+    {
+        return $this->halls;
+    }
+
+    /**
+     * @param ArrayCollection $halls
+     */
+    public function setHalls($halls)
+    {
+        $this->halls = $halls;
     }
 }
 

@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Controller;
 
+use CirTuSofiaBundle\Entity\Hall;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,6 +14,8 @@ class HallController extends Controller
      */
     public function hallAction()
     {
+        $hall = new Hall();
+
         return $this->render('hall/create.html.twig');
     }
 }
