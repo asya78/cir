@@ -264,125 +264,27 @@
                 </div>
             </div>
             <div class="row">
+                {% for hall in halls %}
                 <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal1" class="halls-link" data-toggle="modal" target="_blank">
+                    <a href="#hallModal{{ hall.id }}" class="halls-link" data-toggle="modal" target="_blank">
                         <div class="halls-hover">
                             <div class="halls-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
+                        <img src="{{ asset('uploads/images/') ~ hall.image }}" class="img-responsive" alt="">
                     </a>
                     <div class="halls-caption">
-                        <h4>2101А</h4>
-                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
+                        <h4>{{ hall.number }}</h4>
+                        <p class="text-muted">Брой места: {{ hall.seats }} <br />Проектор: {{ hall.projector? 'Да':'Не'   }}</p>
+                        {% if app.getUser() and app.getUser().isAdmin() %}
+                        <a class="btn btn-danger" href="{{ path('hall_delete', {'id' :hall.id}) }}">Изтриване</a>
+                        <a class="btn btn-primary" href="{{ path('hall_edit', {'id' :hall.id}) }}">Редактиране</a>
+                        {% endif %}
                     </div>
                 </div>
+                {% endfor %}
 
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal2" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>2101B</h4>
-                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal3" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>2101Г</h4>
-                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal4" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>2108А</h4>
-                        <p class="text-muted">Брой места: 20 <br />Проектор: да</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal5" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>2108Б</h4>
-                        <p class="text-muted">Брой места: 20 <br />Проектор: да</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal6" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>4130А</h4>
-                        <p class="text-muted">Брой места: 15 <br />Проектор: не</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal7" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>4130Б</h4>
-                        <p class="text-muted">Брой места: 15 <br />Проектор: не</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 halls-item">
-                    <a href="#hallModal8" class="halls-link" data-toggle="modal" target="_blank">
-                        <div class="halls-hover">
-                            <div class="halls-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/halls/computer-room.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="halls-caption">
-                        <h4>4132</h4>
-                        <p class="text-muted">Брой места: 12 <br />Проектор: не</p>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -758,8 +660,9 @@
     <!-- Hall Modals -->
     <!-- Use the modals below to showcase details about your Halls! -->
 
-    <!-- Hall Modal 1 -->
-    <div class="halls-modal modal fade" id="hallModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Hall Modal -->
+    {% for hall in halls %}
+    <div class="halls-modal modal fade" id="hallModal{{ hall.id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -772,9 +675,9 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>2101A</h2>
+                            <h2>{{ hall.number }}</h2>
                             <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
+                            <img class="img-responsive img-centered" src="{{ asset('uploads/images/') ~ hall.image }}" alt="">
                             <p>График на учебната зала:<br />Направете заявка:</p>
 
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
@@ -784,195 +687,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Hall Modal 2 -->
-    <div class="halls-modal modal fade" id="hallModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>2101B</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hall Modal 3 -->
-    <div class="halls-modal modal fade" id="hallModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>2101Г</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hall Modal 4 -->
-    <div class="halls-modal modal fade" id="hallModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>2108A</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hall Modal 5 -->
-    <div class="halls-modal modal fade" id="hallModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>2101Б</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hall Modal 6 -->
-    <div class="halls-modal modal fade" id="hallModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>4130А</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hall Modal 7 -->
-    <div class="halls-modal modal fade" id="hallModal7" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>4130Б</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hall Modal 8 -->
-    <div class="halls-modal modal fade" id="hallModal8" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>4132</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-responsive img-centered" src="{{ asset('img/halls/computer-room.jpg') }}" alt="">
-                            <p>График на учебната зала:<br />Направете заявка:</p>
-
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 
     <!-- History Modals -->
     <!-- Use the modals below to showcase details about your history! -->

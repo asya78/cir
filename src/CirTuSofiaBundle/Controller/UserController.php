@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Controller;
 
+use CirTuSofiaBundle\Entity\Role;
 use CirTuSofiaBundle\Entity\User;
 use CirTuSofiaBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -13,7 +14,7 @@ class UserController extends Controller
 
     /**
      * @Route("/register", name="user_register")
-     * $param Request $request
+     * $param RequestHall $request
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -27,8 +28,14 @@ class UserController extends Controller
 
         if ($form->isSubmitted()) {
 
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
+            $password = $this
+                ->get('security.password_encoder')
+                ->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
+
+            $userRole = $this->getDoctrine()->getRepository(Role::class)->findOneBy(['name'=>'ROLE_USER']);
+            $user->addRole($userRole);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();

@@ -16,9 +16,32 @@ $(document).ready( function() {
     });
 
     if (window.location.pathname !== "/") {
-        $('.navbar-default').css('background-color','#4394b1');
+        $('.navbar-default').css({'background-color':'#4394b1', 'padding':'0px'});
         $('.navbar-default .navbar-brand').css('color','#feca65')
     }
+
+    // Dropdown menu
+    $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $(this).parent().siblings().removeClass('open');
+        $(this).parent().toggleClass('open');
+    });
+
+    $(".toggle-password").click(function() {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+
+    $('.js-datepicker').datepicker({
+        format: 'd-mm-yy'
+    });
 
 });
 

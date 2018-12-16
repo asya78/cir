@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -75,6 +76,25 @@ class Hall
      * @ORM\JoinColumn(name="userId", referencedColumnName="id")
      */
     private $user;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\RequestHall",mappedBy="hall")
+     */
+    private $requests;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Problem",mappedBy="hall")
+     */
+    private $problems;
+
+    public function __construct()
+    {
+        $this->requests = new ArrayCollection();
+
+        $this->problems = new ArrayCollection();
+    }
 
 
     /**
@@ -264,6 +284,14 @@ class Hall
         $this->user = $user;
 
         return $this;
+    }
+    /**
+     * @return ArrayCollection
+     */
+    public function getRequests()
+    {
+        return $this->requests;
+
     }
 
 }

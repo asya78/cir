@@ -53,9 +53,29 @@ class User implements UserInterface
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Request", mappedBy="user")
+     *
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\RequestHall", mappedBy="requester")
      */
     private $requests;
+
+    /**
+     * @var ArrayCollection
+     * Many Users have Many Roles.
+     * @ORM\ManyToMany(targetEntity="CirTuSofiaBundle\Entity\Role", inversedBy="users")
+     * @ORM\JoinTable(name="users_roles")
+     *
+     */
+    private $roles;
+
+    public function __construct()
+    {
+        $this->halls = new ArrayCollection();
+
+        $this->requests = new ArrayCollection();
+
+        $this->roles = new ArrayCollection();
+
+    }
 
     /**
      * Get id
@@ -155,7 +175,31 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        return [];
+        $stringRoles = [];
+
+        /** @var $role Role */
+        foreach ($this->roles as $role)
+        {
+            $stringRoles[] = $role->getRole();
+        }
+
+        return $stringRoles;
+    }
+
+    /**
+     * @param  Role $role
+     * @return User
+     */
+    public function addRole($role)
+    {
+        $this->roles[] = $role;
+
+        return $this;
+    }
+
+    public function isAdmin()
+    {
+        return in_array("ROLE_ADMIN", $this->getRoles());
     }
 
     /**
@@ -200,11 +244,34 @@ class User implements UserInterface
     }
 
     /**
-     * @param ArrayCollection $halls
+     * @param \CirTuSofiaBundle\Entity\Hall $hall
+     *
+     * @return User
      */
-    public function setHalls($halls)
+    public function addHall($hall)
     {
-        $this->halls = $halls;
+        $this->halls[] = $hall;
+
+        return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRequests()
+    {
+        return $this->requests;
+    }
+
+    /**
+     * @param Request $request
+     * @return  User
+     */
+    public function addRequest($request)
+    {
+        $this->requests[] = $request;
+
+        return $this;
     }
 }
 

@@ -942,3 +942,26 @@ img::-moz-selection {
     background: 0 0;
 }
 
+.field-icon {
+    float: right;
+    margin-right: 5px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover{
+    background-color: transparent;
+    color: rgb(254, 202, 101);
+}
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+    text-align: center;
+    vertical-align: middle;
+}

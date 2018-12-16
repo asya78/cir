@@ -28,6 +28,14 @@ class Problem
      */
     private $description;
 
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne(targetEntity="CirTuSofiaBundle\Entity\Hall",inversedBy="problems")
+     * @ORM\JoinColumn(name="hall_id",referencedColumnName="id")
+     */
+    private $hall;
+
 
     /**
      * Get id
