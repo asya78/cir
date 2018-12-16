@@ -7,6 +7,7 @@ use CirTuSofiaBundle\Entity\RequestHall;
 use CirTuSofiaBundle\Form\RequestHallType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -30,30 +31,17 @@ class RequestHallController extends Controller
 
 
             $form->submit($request->request->all());
-//
-//            dump($form->isValid());
-//            exit;
+
+
 
             if ($form->isSubmitted()) {
-
-                $timeStart = $form->getExtraData()['request']['timeStart'];
-
-                $requestHall->setTimeStart($timeStart);
-
-                $timeEnd = $form->getExtraData()['request']['timeEnd'];
-
-                $requestHall->setTimeEnd($timeEnd);
-
-                            dump($requestHall);
-            exit;
-
-                $requestHall->setDescription($form->getExtraData()['request']['description']);
 
                 $currentUser = $this->getUser();
 
                 $requestHall->setRequester($currentUser);
 
-                $requestHall->setRequesterId($currentUser);
+                $requestHall->setRequesterId($currentUser->getId());
+
 
                 $em = $this->getDoctrine()->getManager();
 
@@ -64,9 +52,9 @@ class RequestHallController extends Controller
                 return $this->redirectToRoute('cir_index');
             }
 
-            return $this->render('request/create.html.twig', array('form' => $form->createView(), 'halls' => $halls));
-
         }
+
+        return $this->render('request/create.html.twig', array('form' => $form->createView(), 'halls'=> $halls));
     }
 
 }

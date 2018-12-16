@@ -31,19 +31,17 @@ class RequestHallType extends AbstractType
             ))
             ->add('timeStart', TimeType::class, array(
                 'widget' => 'single_text',
-                'input'  => 'datetime',
                 'data_class' => null,
                 'html5' => false
 
             ))
             ->add('timeEnd', TimeType::class, array(
                 'widget' => 'single_text',
-                'input'  => 'datetime',
                 'html5' => false,
                 'data_class' => null
             ))
-            ->add('description', TextareaType::class, ['data'=>null])
-            ->add('hall', ChoiceType::class);
+            ->add('description', TextareaType::class, ['data'=>null]);
+
     }
 
     /**

@@ -4,6 +4,7 @@ namespace CirTuSofiaBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
@@ -60,7 +61,7 @@ class RequestHall
 
     /**
      * @ORM\ManyToOne(targetEntity="CirTuSofiaBundle\Entity\Hall",inversedBy="requests")
-     * @ORM\JoinColumn(name="hall_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="hallId",referencedColumnName="id")
      */
     private $hall;
 
@@ -83,7 +84,6 @@ class RequestHall
 
         $this->status = 'Чакаща';
 
-        $this->description = new TextareaType();
 
     }
 
@@ -133,6 +133,8 @@ class RequestHall
     {
         $this->timeStart = $timeStart;
 
+        return $this;
+
     }
 
     /**
@@ -174,11 +176,15 @@ class RequestHall
      *
      * @param string $description
      *
-     * @return string
+     * @return RequestHall
      */
     public function setDescription($description)
     {
         $this->description = $description;
+
+        return $this;
+
+
     }
 
     /**
@@ -189,6 +195,7 @@ class RequestHall
     public function getDescription()
     {
         return $this->description;
+
     }
 
     /**
@@ -239,10 +246,13 @@ class RequestHall
 
     /**
      * @param string $status
+     * @return RequestHall
      */
     public function setStatus($status)
     {
         $this->status = $status;
+
+        return $this;
     }
 
     /**

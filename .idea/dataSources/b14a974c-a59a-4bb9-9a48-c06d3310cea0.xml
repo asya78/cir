@@ -1133,7 +1133,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="236" name="hall_id">
+    <column id="272" parent="236" name="hallId">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
@@ -1150,8 +1150,8 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="275" parent="236" name="IDX_7B85D65152AFCFD6">
-      <ColNames>hall_id</ColNames>
+    <index id="275" parent="236" name="IDX_7B85D651AA6E599B">
+      <ColNames>hallId</ColNames>
       <Type>btree</Type>
     </index>
     <index id="276" parent="236" name="IDX_7B85D65191EC6DA8">
@@ -1163,8 +1163,8 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="278" parent="236" name="FK_7B85D65152AFCFD6">
-      <ColNames>hall_id</ColNames>
+    <foreign-key id="278" parent="236" name="FK_7B85D651AA6E599B">
+      <ColNames>hallId</ColNames>
       <RefSchemaName>cir</RefSchemaName>
       <RefTableName>halls</RefTableName>
       <RefColNames>id</RefColNames>
