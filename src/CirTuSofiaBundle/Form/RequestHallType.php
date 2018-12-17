@@ -24,7 +24,7 @@ class RequestHallType extends AbstractType
                 // prevents rendering it as type="date", to avoid HTML5 date pickers
                 'html5' => false,
 
-                'format' => 'd-M-y',
+                'format' => 'y-M-d',
 
                 // adds a class that can be selected in JavaScript
                 'attr' => ['class' => 'js-datepicker']

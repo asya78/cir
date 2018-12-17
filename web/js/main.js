@@ -40,7 +40,7 @@ $(document).ready( function() {
     });
 
     $('.js-datepicker').datepicker({
-        format: 'd-mm-yy'
+        format: 'yy-mm-d'
     });
 
 });

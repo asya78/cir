@@ -10,4 +10,5 @@ namespace CirTuSofiaBundle\Repository;
  */
 class RequestHallRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

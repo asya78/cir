@@ -60,6 +60,13 @@ class RequestHall
     private $status;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="hallId", type="integer")
+     */
+    private $hallId;
+
+    /**
      * @ORM\ManyToOne(targetEntity="CirTuSofiaBundle\Entity\Hall",inversedBy="requests")
      * @ORM\JoinColumn(name="hallId",referencedColumnName="id")
      */
@@ -83,7 +90,6 @@ class RequestHall
     {
 
         $this->status = 'Чакаща';
-
 
     }
 
@@ -218,7 +224,7 @@ class RequestHall
     }
 
     /**
-     * @return mixed
+     * @return Hall
      */
     public function getHall()
     {
@@ -227,13 +233,10 @@ class RequestHall
 
     /**
      * @param $hall
-     * @return RequestHall
      */
     public function setHall($hall)
     {
         $this->hall = $hall;
-
-        return $this;
     }
 
     /**
@@ -273,5 +276,26 @@ class RequestHall
 
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getHallId()
+    {
+        return $this->hallId;
+    }
+
+    /**
+     * @param int $hallId
+     * @return RequestHall
+     */
+    public function setHallId($hallId)
+    {
+        $this->hallId = $hallId;
+
+        return $this;
+    }
+
+
 }
 

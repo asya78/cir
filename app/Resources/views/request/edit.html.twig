@@ -4,16 +4,19 @@
     <section>
         <div class="container ">
             <div class="well col-xs-8 col-xs-offset-2">
-                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('requestHall_create') }}" method="POST">
+                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('requestHall_edit',{id: requestHall.id}) }}" method="POST">
                     <fieldset>
-                        <legend>Заявка за зала</legend>
+                        <legend>Редактиране на заявка</legend>
 
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="hallId">Номер на зала:</label>
                             <div class="col-xs-4">
                                 <select class="form-control" id="hallId" name="hallId">
+                                    <option value="{{ requestHall.hallId }}">{{ requestHall.hall.number }}</option>
                                     {%  for hall in halls %}
+                                        {% if requestHall.hallId == hall.id %}
                                         <option value="{{ hall.id }}">{{ hall.hall.number }}</option>
+                                        {% endif %}
                                     {% endfor %}
                                 </select>
                             </div>
@@ -22,28 +25,28 @@
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="date">Дата:</label>
                             <div class="col-xs-4">
-                                <input type="date" class="form-control" id="date" name="date">
+                                <input type="date" class="form-control" id="date" name="date" value="{{ requestHall.date|date("Y/m/d") }}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="timeStart">Начален час :</label>
                             <div class="col-xs-4">
-                                <input type="time" class="form-control" id="timeStart" placeholder="" name="timeStart">
+                                <input type="time" class="form-control" id="timeStart" placeholder="" name="timeStart" value="{{ requestHall.timeStart|date("H:i") }}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="timeEnd">Краен час :</label>
                             <div class="col-xs-4">
-                                <input type="time" class="form-control" id="timeStart" placeholder="" name="timeEnd">
+                                <input type="time" class="form-control" id="timeStart" placeholder="" name="timeEnd" value="{{ requestHall.timeEnd|date("H:i") }}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="description">Допълнителна информация:</label>
                             <div class="col-xs-7">
-                                <textarea  class="form-control" rows="6" id="description" name="description"></textarea>
+                                <textarea  class="form-control" rows="6" id="description" name="description" >{{ requestHall.description }}</textarea>
                             </div>
                         </div>
 
@@ -51,8 +54,8 @@
 
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-5">
-                                <a class="btn btn-default" href="{{ path('cir_index') }}">Отказване</a>
-                                <button type="submit" class="btn btn-primary">Добавяне</button>
+                                <a class="btn btn-default" href="{{ path('requestHall_all') }}">Отказване</a>
+                                <button type="submit" class="btn btn-primary">Редактиране</button>
                             </div>
                         </div>
 
