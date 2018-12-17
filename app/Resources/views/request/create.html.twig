@@ -9,9 +9,9 @@
                         <legend>Заявка за зала</legend>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="hall_number">Номер на зала:</label>
+                            <label class="col-xs-5 control-label" for="hallId">Номер на зала:</label>
                             <div class="col-xs-4">
-                                <select class="form-control" id="hall_number" name="hallId">
+                                <select class="form-control" id="hallId" name="hallId">
                                     {%  for hall in halls %}
                                         <option value="{{ hall.id }}">{{ hall.number }}</option>
                                     {% endfor %}
@@ -20,34 +20,34 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="request_date">Дата:</label>
+                            <label class="col-xs-5 control-label" for="date">Дата:</label>
                             <div class="col-xs-4">
-                                <input type="date" class="form-control" id="request_date" name="date">
+                                <input type="date" class="form-control" id="date" name="date">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="request_timeStart">Начален час :</label>
+                            <label class="col-xs-5 control-label" for="timeStart">Начален час :</label>
                             <div class="col-xs-4">
-                                <input type="time" class="form-control" id="request_timeStart" placeholder="" name="timeStart">
+                                <input type="time" class="form-control" id="timeStart" placeholder="" name="timeStart">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="request_timeEnd">Краен час :</label>
+                            <label class="col-xs-5 control-label" for="timeEnd">Краен час :</label>
                             <div class="col-xs-4">
-                                <input type="time" class="form-control" id="request_timeEnd" placeholder="" name="timeEnd">
+                                <input type="time" class="form-control" id="timeStart" placeholder="" name="timeEnd">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="request_description">Допълнителна информация:</label>
+                            <label class="col-xs-5 control-label" for="description">Допълнителна информация:</label>
                             <div class="col-xs-7">
-                                <textarea  class="form-control" rows="6" id="request_description" name="description"></textarea>
+                                <textarea  class="form-control" rows="6" id="description" name="description"></textarea>
                             </div>
                         </div>
 
-                        <input type="hidden" name="form[_token]" value="{{ form._token.vars.value }}" />
+                        {{ form_row(form._token) }}
 
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-5">

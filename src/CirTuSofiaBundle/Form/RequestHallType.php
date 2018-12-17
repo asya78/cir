@@ -41,7 +41,6 @@ class RequestHallType extends AbstractType
                 'data_class' => null
             ))
             ->add('description', TextareaType::class, ['data'=>null]);
-
     }
 
     /**

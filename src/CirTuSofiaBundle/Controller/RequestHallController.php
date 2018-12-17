@@ -29,10 +29,7 @@ class RequestHallController extends Controller
 
         if ($request->isMethod('POST')) {
 
-
             $form->submit($request->request->all());
-
-
 
             if ($form->isSubmitted()) {
 
@@ -42,6 +39,7 @@ class RequestHallController extends Controller
 
                 $requestHall->setRequesterId($currentUser->getId());
 
+                $requestHall->setHall($requestHall->getHall());
 
                 $em = $this->getDoctrine()->getManager();
 
