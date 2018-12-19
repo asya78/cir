@@ -702,14 +702,17 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
-                                                {#</tr>#}
-                                                    {#<tr>#}
-                                                        {#<td>{{ request.date|date("Y/m/d") }}</td>#}
-                                                        {#<td>{{ request.timeStart|date('H:i') }}</td>#}
-                                                        {#<td>{{ request.timeEnd|date('H:i') }}</td>#}
-                                                        {#<td>{{ request.description }}</td>#}
-                                                    {#</tr>#}
-                                                {#{% endfor %}#}
+                                                </tr>
+                                                {% for requestsHall in requestsHalls %}
+                                                    {% if requestsHall.hallId == hall.id %}
+                                                    <tr>
+                                                        <td>{{ requestsHall.date|date("Y/m/d") }}</td>
+                                                        <td>{{ requestsHall.timeStart|date('H:i') }}</td>
+                                                        <td>{{ requestsHall.timeEnd|date('H:i') }}</td>
+                                                        <td>{{ requestsHall.description }}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                {% endfor %}
                                                 </tbody>
                                             </table>
                                         </div>
