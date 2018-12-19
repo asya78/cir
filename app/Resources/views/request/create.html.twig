@@ -12,8 +12,9 @@
                             <label class="col-xs-5 control-label" for="hallId">Номер на зала:</label>
                             <div class="col-xs-4">
                                 <select class="form-control" id="hallId" name="hallId">
+                                    <option value="">Избери</option>
                                     {%  for hall in halls %}
-                                        <option value="{{ hall.id }}">{{ hall.hall.number }}</option>
+                                        <option value="{{ hall.id }}">{{ hall.number }}</option>
                                     {% endfor %}
                                 </select>
                             </div>

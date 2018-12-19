@@ -119,8 +119,64 @@ class RequestHallController extends Controller
 
         return $this->render('request/edit.html.twig', array('form' => $form->createView(), 'requestHall'=>$requestHall,'halls'=> $halls));
 
+    }
 
+    /**
+     * @Route("/requestHall/delete/{id}", name="requestHall_delete")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
+     * @param $id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function deleteRequestHall($id, Request $request)
+    {
+        $requestHall = $this
+            ->getDoctrine()
+            ->getRepository(RequestHall::class)
+            ->find($id);
 
+        if ($requestHall === null) {
+
+            return $this->redirectToRoute('cir_index');
+        }
+
+        $halls = $this->getDoctrine()->getRepository(Hall::class)->findAll();
+
+        $form = $this->createForm(RequestHallType::class, $requestHall);
+
+        if ($request->isMethod('POST')) {
+
+            $form->submit($request->request->all());
+
+            if ($form->isSubmitted()) {
+
+                $currentUser = $this->getUser();
+
+                $requestHall->setRequester($currentUser);
+
+                $requestHall->setRequesterId($currentUser->getId());
+
+                $currentHall = $this
+                    ->getDoctrine()
+                    ->getRepository(Hall::class)
+                    ->find(intval($form->getExtraData()['hallId']));
+
+                $requestHall->setHallId($currentHall->getId());
+
+                $requestHall->setHall($currentHall);
+
+                $em = $this->getDoctrine()->getManager();
+
+                $em->remove($requestHall);
+
+                $em->flush();
+
+                return $this->redirectToRoute('requestHall_all');
+            }
+
+        }
+
+        return $this->render('request/delete.html.twig', array('form' => $form->createView(), 'requestHall'=>$requestHall,'halls'=> $halls));
 
     }
 

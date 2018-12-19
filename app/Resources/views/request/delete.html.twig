@@ -5,9 +5,9 @@
     <section>
         <div class="container ">
             <div class="well col-xs-8 col-xs-offset-2">
-                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('requestHall_edit',{id: requestHall.id}) }}" method="POST">
+                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('requestHall_delete',{id: requestHall.id}) }}" method="POST">
                     <fieldset>
-                        <legend>Редактиране на заявка</legend>
+                        <legend>Изтриване на заявка</legend>
 
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="hallId">Номер на зала:</label>
@@ -17,7 +17,7 @@
                                     {%  set currentHallId = requestHall.hallId %}
                                     {% for hall in halls %}
                                         {% if currentHallId != hall.id %}
-                                        <option value="{{ hall.id }}">{{ hall.number }}</option>
+                                            <option value="{{ hall.id }}">{{ hall.number }}</option>
                                         {% endif %}
                                     {% endfor %}
                                 </select>
@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-5">
                                 <a class="btn btn-default" href="{{ path('requestHall_all') }}">Отказване</a>
-                                <button type="submit" class="btn btn-primary">Редактиране</button>
+                                <button type="submit" class="btn btn-danger">Изтриване</button>
                             </div>
                         </div>
 
@@ -69,3 +69,5 @@
         </div>
     </section>
 {% endblock %}
+
+

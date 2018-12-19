@@ -3,6 +3,7 @@
 namespace CirTuSofiaBundle\Controller;
 
 use CirTuSofiaBundle\Entity\Hall;
+use CirTuSofiaBundle\Entity\RequestHall;
 use CirTuSofiaBundle\Form\HallType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -178,5 +179,18 @@ class HallController extends Controller
         $halls = $this->getDoctrine()->getRepository(Hall::class)->findAll();
 
         return $this->render('hall/halls.html.twig',['halls'=>$halls]);
+    }
+
+    /**
+     * @Route("/hall/schedule/{id}", name="hall_schedule")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function scheduleHall($id)
+    {
+        $hall = $this->getDoctrine()->getRepository(Hall::class)->find($id);
+        $requestsHalls = $this->getDoctrine()->getRepository(RequestHall::class)->findBy(array('hallId'=>$id));
+        return $this->render('hall/schedule.html.twig',['hall'=>$hall,'requestsHalls'=>$requestsHalls]);
     }
 }

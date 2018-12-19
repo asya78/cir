@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6565d265-ff7c-480a-a482-a9fdf615229a" name="Default Changelist" comment="">
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/Hall.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Entity/User.php" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/HallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/HallController.php" afterDir="false" />
->>>>>>> 2cb322e48de33c47112000d54c97633bba10c13a
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

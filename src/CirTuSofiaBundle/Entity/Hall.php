@@ -294,5 +294,17 @@ class Hall
 
     }
 
+    /**
+     * @param RequestHall $requestHall
+     *
+     * @return Hall
+     */
+    public function addRequest($requestHall)
+    {
+        $this->requests[] = $requestHall;
+
+        return $this;
+    }
+
 }
 
