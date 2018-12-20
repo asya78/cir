@@ -1164,6 +1164,7 @@
     <column id="286" parent="255" name="hallId">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="287" parent="255" name="IDX_7B85D65191EC6DA8">
