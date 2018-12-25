@@ -32,8 +32,8 @@
                                 </thead>
                                 <tbody>
                                 {% for request in requests %}
+                                    {% if request.requesterId == app.getUser().getId() or app.getUser().isAdmin() %}
                                     <tr>
-
                                         <td>{{ request.hall.number }}</td>
                                         <td>{{ request.date|date("Y/m/d") }}</td>
                                         <td>{{ request.timeStart|date('H:i') }}</td>
@@ -47,6 +47,7 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    {% endif %}
                                 {% endfor %}
                                 </tbody>
                             </table>

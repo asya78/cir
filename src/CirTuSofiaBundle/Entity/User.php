@@ -67,7 +67,12 @@ class User implements UserInterface
      */
     private $roles;
 
-
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean")
+     */
+    private $status;
 
     public function __construct()
     {
@@ -76,6 +81,8 @@ class User implements UserInterface
         $this->requests = new ArrayCollection();
 
         $this->roles = new ArrayCollection();
+
+        $this->status = true;
 
     }
 
@@ -204,6 +211,21 @@ class User implements UserInterface
         return in_array("ROLE_ADMIN", $this->getRoles());
     }
 
+    public function isLector()
+    {
+        return in_array("ROLE_LECTOR", $this->getRoles());
+    }
+
+    public function isOperator()
+    {
+        return in_array("ROLE_OPERATOR", $this->getRoles());
+    }
+
+    public function isUser()
+    {
+        return in_array("ROLE_USER", $this->getRoles());
+    }
+
     /**
      * Returns the salt that was originally used to encode the password.
      *
@@ -272,6 +294,25 @@ class User implements UserInterface
     public function addRequest($request)
     {
         $this->requests[] = $request;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param bool $status
+     * @return User
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
 
         return $this;
     }

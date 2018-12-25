@@ -11,6 +11,11 @@
                 <div class="intro-text"></div>
             </div>
             <div class="col-sm-6">
+                {%  for msg in app.session.flashBag.get('message') %}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
                 <div class="row">
                     <div class="login-form">
                         <form name="register" action="{{ path('user_register') }}" method="post">

@@ -1,9 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
     <section>
         <div class="container">
-            <h1>{{ user.fullName }}</h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                    <h1 class="page-header">{{ user.getFullName() }}</h1>
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-right">
+                    <a class="btn btn-info" href="{{ path('edit_profile',{'id': user.id}) }}"><i class="fa fa-plus-circle"></i> Редактиране</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <a class="btn btn-default" href="{{ path('user_all') }}"><i class="fa fa-arrow-circle-o-left"></i> Назад</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>Име: <strong>{{ user.getFullName() }}</strong></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>Ел. Поща: <strong>{{ user.getEmail() }}</strong></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>Тип потребител: <strong>{{  user.roles|join(', ') }}</strong></p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

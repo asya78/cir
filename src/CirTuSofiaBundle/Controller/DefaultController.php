@@ -4,6 +4,7 @@ namespace CirTuSofiaBundle\Controller;
 
 use CirTuSofiaBundle\Entity\Hall;
 use CirTuSofiaBundle\Entity\RequestHall;
+use CirTuSofiaBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -24,6 +25,11 @@ class DefaultController extends Controller
             ->getRepository(RequestHall::class)
             ->findAll();
 
-        return $this->render('default/index.html.twig',['halls'=>$halls,'requestsHalls'=>$requestsHalls]);
+        $user = $this
+            ->getDoctrine()
+            ->getRepository(User::class)
+            ->findAll();
+
+        return $this->render('default/index.html.twig',['halls'=>$halls,'requestsHalls'=>$requestsHalls,'user'=>$user]);
     }
 }
