@@ -30,6 +30,14 @@ class Role
     private $name;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="bgName", type="string", length=255)
+     */
+    private $bgName;
+
+
+    /**
      * Many Groups have Many Users.
      * @ORM\ManyToMany(targetEntity="CirTuSofiaBundle\Entity\User", mappedBy="roles")
      */
@@ -39,7 +47,6 @@ class Role
     {
         $this->users = new ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -82,6 +89,23 @@ class Role
     {
         return $this->getName();
     }
+
+    /**
+     * @return string
+     */
+    public function getBgName()
+    {
+        return $this->bgName;
+    }
+
+    /**
+     * @param string $bgName
+     */
+    public function setBgName($bgName)
+    {
+        $this->bgName = $bgName;
+    }
+
 
 }
 

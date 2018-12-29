@@ -42,9 +42,9 @@
                                         {% if app.getUser().isAdmin()  %}
                                         <td>
                                             <div class="btn-group">
-                                                {#<a class="btn btn-danger" href="{{ path('user_delete', {'id' :hall.id}) }}">Изтриване</a>#}
-                                                <a class="btn btn-primary" href="{{ path('view_profile', {'id' :user.id}) }}">Изглед</a>
-                                                <a class="btn btn-primary" href="{{ path('edit_profile', {'id' :user.id}) }}">Редактиране</a>
+                                                <a class="btn btn-info" href="{{ path('view_user', {'id' :user.id}) }}"><i class="fa fa-eye" title="Изглед"></i></a>
+                                                <a class="btn btn-warning" href="{{ path('edit_user', {'id' :user.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
+                                                <a class="btn btn-danger" href=""><i class="fa fa-trash" title="Изтриване"></i></a>
                                             </div>
                                         </td>
                                         {% endif %}

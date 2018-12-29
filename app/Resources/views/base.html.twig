@@ -72,7 +72,7 @@
                                     <a class="dropdown-toggle" data-toggle="dropdown">{{ app.getUser().getFullName() }} <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="{{ path('view_profile', {'id' :app.getUser().getId()}) }}">Профил</a>
+                                            <a href="{{ path('view_user', {'id' :app.getUser().getId()}) }}">Профил</a>
                                         </li>
                                         <li>
                                             <a href="{{ path('hall_all') }}">Зали</a>
@@ -82,7 +82,7 @@
                                         </li>
                                         {% if app.getUser().isAdmin() %}
                                         <li>
-                                            <a href="{{ path('user_all') }}" >Потребители</a>
+                                            <a href="{{ path('all_user') }}" >Потребители</a>
                                         </li>
                                         {% endif %}
                                         <li>

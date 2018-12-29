@@ -10,4 +10,5 @@ namespace CirTuSofiaBundle\Repository;
  */
 class RoleRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

@@ -3,8 +3,10 @@
 namespace CirTuSofiaBundle\Form;
 
 
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,6 +22,7 @@ class UserType extends AbstractType
         add('email', TextType::class)->
         add('password', TextType::class)->
         add('fullName', TextType::class)->
+        add('roles',IntegerType::class, array('mapped'=>false,'data'=>null))->
         add('status', ChoiceType::class, array(
                 'choices' =>array(
                     'Активен' => true,
@@ -28,7 +31,7 @@ class UserType extends AbstractType
                 'choice_value' => function ($choice) {
                     return false === $choice ? '0' : (string) $choice;
                 },
-                'data' => null,
+                'empty_data' => null,
                 'choices_as_values' => true,
             ));
     }/**

@@ -206,6 +206,17 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @param Role $role
+     * @return User
+     */
+    public function removeRole($role)
+    {
+        $this->roles->removeElement($role);
+
+        return $this;
+    }
+
     public function isAdmin()
     {
         return in_array("ROLE_ADMIN", $this->getRoles());
@@ -316,5 +327,6 @@ class User implements UserInterface
 
         return $this;
     }
+
 }
 
