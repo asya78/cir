@@ -4,6 +4,7 @@ namespace CirTuSofiaBundle\Controller;
 
 use CirTuSofiaBundle\Entity\Hall;
 use CirTuSofiaBundle\Entity\RequestHall;
+use CirTuSofiaBundle\Entity\User;
 use CirTuSofiaBundle\Form\RequestHallType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -177,6 +178,41 @@ class RequestHallController extends Controller
         }
 
         return $this->render('request/delete.html.twig', array('form' => $form->createView(), 'requestHall'=>$requestHall,'halls'=> $halls));
+
+    }
+
+    /**
+     * @Route("/requestHall/forwarding/{id}", name="requestHall_forwarding")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
+     * @param $id
+     * @return  \Symfony\Component\HttpFoundation\Response
+     */
+    public function forwardingRequestHall($id)
+    {
+        $requestHall = $this
+            ->getDoctrine()
+            ->getRepository(RequestHall::class)
+            ->find($id);
+
+        $requesterId = $requestHall->getRequester()->getId();
+
+        $userAdmin = $this
+            ->getDoctrine()
+            ->getRepository(User::class)
+            ->find('1');
+
+        $requestHall->setRequester($userAdmin);
+
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($requestHall);
+
+        $em->flush();
+
+        return $this->redirectToRoute('delete_user',['id'=> $requesterId]);
+
 
     }
 

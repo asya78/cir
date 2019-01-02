@@ -2,6 +2,8 @@
 
 namespace CirTuSofiaBundle\Repository;
 
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * RequestHallRepository
  *
@@ -11,5 +13,14 @@ namespace CirTuSofiaBundle\Repository;
 class RequestHallRepository extends \Doctrine\ORM\EntityRepository
 {
 
-
+    public function countRequestsById($id)
+    {
+        return $this
+            ->createQueryBuilder('s')
+            ->select('count(s.requesterId)')
+            ->where('s.requesterId= :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
 }

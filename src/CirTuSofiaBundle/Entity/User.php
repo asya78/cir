@@ -224,17 +224,17 @@ class User implements UserInterface
 
     public function isLector()
     {
-        return in_array("ROLE_LECTOR", $this->getRoles());
+        return in_array("ROLE_LECTOR", $this->getRoles()) or $this->isAdmin();
     }
 
     public function isOperator()
     {
-        return in_array("ROLE_OPERATOR", $this->getRoles());
+        return in_array("ROLE_OPERATOR", $this->getRoles()) or $this->isAdmin();
     }
 
     public function isUser()
     {
-        return in_array("ROLE_USER", $this->getRoles());
+        return in_array("ROLE_USER", $this->getRoles()) or $this->isAdmin();
     }
 
     /**

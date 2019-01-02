@@ -77,10 +77,20 @@
                                         <li>
                                             <a href="{{ path('hall_all') }}">Зали</a>
                                         </li>
+                                        {% if app.user and app.getUser().isAdmin() %}
+                                        {% if app.getUser().isLector() %}
                                         <li>
                                             <a href="{{ path('requestHall_all') }}">Заявки</a>
                                         </li>
-                                        {% if app.getUser().isAdmin() %}
+                                        {% endif %}
+                                        {% if app.getUser().isOperator() %}
+                                        <li>
+                                            <a href="">Заявки софтуер</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Проблеми</a>
+                                        </li>
+                                        {% endif %}
                                         <li>
                                             <a href="{{ path('all_user') }}" >Потребители</a>
                                         </li>

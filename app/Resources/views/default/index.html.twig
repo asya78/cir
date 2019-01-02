@@ -680,9 +680,38 @@
                             <img class="img-responsive img-centered" src="{{ asset('uploads/images/') ~ hall.image }}" alt="">
                             <div class="row">
                                 <div class="col-lg-12">
+                                    <table class="table" border="0">
+                                        <tbody class="pull-center">
+                                        <tr>
+                                            <td>Брой места: {{ hall.seats }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Брой компютри: {{ hall.computers }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ползване на лаптоп: {{ hall.laptop? 'Да':'Не' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ползване на проектор: {{ hall.laptop? 'Да':'Не' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Описание: {{ hall.info }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
                                     <h1 class="page-header">График на учебната зала</h1>
                                 </div>
                             </div>
+                            {% if app.user and (app.getUser().isAdmin() or app.getUser().isOperator()) %}
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col-lg-12 text-right">
+                                        <a class="btn btn-info" href="{{ path('requestHall_create') }}"><i class="fa fa-plus-circle"></i> Заявка</a>
+                                    </div>
+                                </div>
+                            {% endif %}
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="panel panel-default">
@@ -721,7 +750,6 @@
                             </div>
                             <div class="row" style="margin-bottom: 20px;">
                                 <div class="col-lg-12">
-                                    <a class="btn btn-info" href="{{ path('requestHall_create') }}"><i class="fa fa-plus-circle"></i> Нова заявка</a>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
                                 </div>
                             </div>

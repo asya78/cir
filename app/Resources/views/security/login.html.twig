@@ -7,6 +7,11 @@
 
     <div class="container-fluid">
         <div class="row">
+            {%  for msg in app.session.flashBag.get('message') %}
+                <div class="alert alert-danger">
+                    {{ msg }}
+                </div>
+            {% endfor %}
             <div class="col-sm-6 login-img">
                 <div class="intro-text"></div>
             </div>
