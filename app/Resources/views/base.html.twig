@@ -77,6 +77,11 @@
                                         <li>
                                             <a href="{{ path('requestHall_all') }}">Заявки</a>
                                         </li>
+                                        {% if app.getUser().isAdmin() %}
+                                        <li>
+                                            <a href="{{ path('user_all') }}">Потребители</a>
+                                        </li>
+                                        {% endif %}
                                         <li>
                                             <a href="{{ path('security_logout') }}" >Изход</a>
                                         </li>

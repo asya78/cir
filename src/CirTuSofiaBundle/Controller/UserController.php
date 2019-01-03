@@ -28,12 +28,32 @@ class UserController extends Controller
 
         if ($form->isSubmitted()) {
 
+            $emailForm = $form->getData()->getEmail();
+
+            $user = $this
+                ->getDoctrine()
+                ->getRepository(User::class)
+                ->findBy(['email'=> $emailForm]);
+
+            if (null !== $user) {
+
+                $this->addFlash('message','Username with email '. $emailForm.'is already taken.');
+
+                return $this->render('user/register.html.twig');
+
+            }
+
             $password = $this
                 ->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
+
             $user->setPassword($password);
 
-            $userRole = $this->getDoctrine()->getRepository(Role::class)->findOneBy(['name'=>'ROLE_USER']);
+            $userRole = $this
+                ->getDoctrine()
+                ->getRepository(Role::class)
+                ->findOneBy(['name'=>'ROLE_USER']);
+
             $user->addRole($userRole);
 
             $em = $this->getDoctrine()->getManager();
@@ -58,6 +78,16 @@ class UserController extends Controller
 
         return $this->render('user/profile.html.twig',['user'=>$user]);
 
+    }
+
+    /**
+     * @Route("/allUsers", name="user_all")
+     */
+    public function allUsers()
+    {
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        return $this->render('user/allUsers.html.twig',['users'=>$users]);
     }
 
 }
