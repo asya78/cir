@@ -11,7 +11,7 @@
             </div>
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-lg-12 text-right">
-                    <a class="btn btn-info" href="{{ path('hall_create') }}"><i class="fa fa-plus-circle"></i> Добавяне на зала</a>
+                    <a class="btn btn-info" href="{{ path('create_hall') }}"><i class="fa fa-plus-circle"></i> Добавяне на зала</a>
                 </div>
             </div>
             <div class="row">
@@ -43,10 +43,10 @@
                                         <td>{% if hall.image is not null %} Да {% else %} Не {% endif %}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a class="btn btn-info" href=""><i class="fa fa-eye" title="Изглед"></i></a>
-                                                <a class="btn btn-success" href="{{ path('hall_schedule', {'id' :hall.id}) }}"><i class="fa fa-calendar" title="График"></i></a>
-                                                <a class="btn btn-warning" href="{{ path('hall_edit', {'id' :hall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
-                                                <a class="btn btn-danger" href="{{ path('hall_delete', {'id' :hall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
+                                                <a class="btn btn-info" href="{{ path('view_hall', {'id' :hall.id}) }}"><i class="fa fa-eye" title="Изглед"></i></a>
+                                                <a class="btn btn-success" href="{{ path('schedule_hall', {'id' :hall.id}) }}"><i class="fa fa-calendar" title="График"></i></a>
+                                                <a class="btn btn-warning" href="{{ path('edit_hall', {'id' :hall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
+                                                <a class="btn btn-danger" href="{{ path('delete_hall', {'id' :hall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
                                             </div>
                                         </td>
                                     </tr>

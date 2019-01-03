@@ -75,7 +75,7 @@
                                             <a href="{{ path('view_user', {'id' :app.getUser().getId()}) }}">Профил</a>
                                         </li>
                                         <li>
-                                            <a href="{{ path('hall_all') }}">Зали</a>
+                                            <a href="{{ path('all_hall') }}">Зали</a>
                                         </li>
                                         {% if app.user and app.getUser().isAdmin() %}
                                         {% if app.getUser().isLector() %}

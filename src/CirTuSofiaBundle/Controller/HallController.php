@@ -15,10 +15,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class HallController extends Controller
 {
     /**
-     * @Route("/hall/create", name="hall_create")
+     * @Route("/hall/create", name="create_hall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param Request $request
-     * @param null $numberHall
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function createAction(Request $request)
@@ -63,7 +62,19 @@ class HallController extends Controller
     }
 
     /**
-     * @Route("/hall/edit/{id}", name="hall_edit")
+     * @Route("/hall/view/{id}", name="view_hall")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function viewHall($id)
+    {
+        $hall = $this->getDoctrine()->getRepository(Hall::class)->find($id);
+        return $this->render('hall/view.html.twig',['hall'=>$hall]);
+    }
+
+    /**
+     * @Route("/hall/edit/{id}", name="edit_hall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param $id
      * @param Request $request
@@ -130,7 +141,7 @@ class HallController extends Controller
     }
 
     /**
-     * @Route("/hall/delete/{id}", name="hall_delete")
+     * @Route("/hall/delete/{id}", name="delete_hall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param $id
      * @param Request $request
@@ -172,7 +183,7 @@ class HallController extends Controller
     }
 
     /**
-     * @Route("/hall/all", name="hall_all")
+     * @Route("/hall/all", name="all_hall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      */
     public function allHalls()
@@ -183,7 +194,7 @@ class HallController extends Controller
     }
 
     /**
-     * @Route("/hall/schedule/{id}", name="hall_schedule")
+     * @Route("/hall/schedule/{id}", name="schedule_hall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
