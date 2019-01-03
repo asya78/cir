@@ -7,6 +7,11 @@
 
     <div class="container-fluid">
         <div class="row">
+            {%  for msg in app.session.flashBag.get('message') %}
+                <div class="alert alert-danger">
+                    {{ msg }}
+                </div>
+            {% endfor %}
             <div class="col-sm-6 login-img">
                 <div class="intro-text"></div>
             </div>
@@ -27,7 +32,7 @@
                                 <button type="submit" class="btn btn-primary btn-block" > Вход </button>
                             </div>
                             <div class="clearfix text-center">
-                                <a href="{{ path('user_register') }}">Регистрация </a>|
+                                <a href="{{ path('register_user') }}">Регистрация </a>|
                                 <a href="{{ path('cir_index') }}"> Начало</a>
                             </div>
                         </form>

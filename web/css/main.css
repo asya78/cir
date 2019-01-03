@@ -965,3 +965,7 @@ img::-moz-selection {
     text-align: center;
     vertical-align: middle;
 }
+
+.halls-modal .modal-body td{
+   border: none;
+}

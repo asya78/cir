@@ -74,9 +74,6 @@ class User implements UserInterface
      */
     private $status;
 
-
-
-
     public function __construct()
     {
         $this->halls = new ArrayCollection();
@@ -209,27 +206,36 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @param Role $role
+     * @return User
+     */
+    public function removeRole($role)
+    {
+        $this->roles->removeElement($role);
+
+        return $this;
+    }
+
     public function isAdmin()
     {
         return in_array("ROLE_ADMIN", $this->getRoles());
     }
 
-    public function isUser()
+    public function isLector()
     {
-        return in_array("ROLE_USER", $this->getRoles());
-    }
-
-    public function isLecturer()
-    {
-        return in_array("ROLE_LECTURER", $this->getRoles());
+        return in_array("ROLE_LECTOR", $this->getRoles()) or $this->isAdmin();
     }
 
     public function isOperator()
     {
-        return in_array("ROLE_OPERATOR", $this->getRoles());
+        return in_array("ROLE_OPERATOR", $this->getRoles()) or $this->isAdmin();
     }
 
-
+    public function isUser()
+    {
+        return in_array("ROLE_USER", $this->getRoles()) or $this->isAdmin();
+    }
 
     /**
      * Returns the salt that was originally used to encode the password.
@@ -315,11 +321,12 @@ class User implements UserInterface
      * @param bool $status
      * @return User
      */
-    public function setStatus( $status)
+    public function setStatus($status)
     {
         $this->status = $status;
 
         return $this;
     }
+
 }
 

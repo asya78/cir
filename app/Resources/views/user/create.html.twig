@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <section>
+        <div class="container">
+            {%  for msg in app.session.flashBag.get('message') %}
+                <div class="alert alert-danger">
+                    {{ msg }}
+                </div>
+            {% endfor %}
+            {#<div class="row">#}
+                {#<div class="col-xs-8 col-xs-offset-2">#}
+                    {#<h1 class="page-header">{{ user.getFullName() }}</h1>#}
+                {#</div>#}
+            {#</div>#}
+            <div class="well col-xs-8 col-xs-offset-2">
+                <form name="create" class="form-horizontal" action="{{ path('create_user') }}" method="POST">
+                    <fieldset>
+                        <legend>Добавяне на потребител</legend>
+                        <div class="form-group">
+                            <label class="col-xs-5 control-label" for="user_fullName">Име</label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" id="user_fullName" name="user[fullName]" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-5 control-label" for="user_email">Ел. Поща</label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" id="user_email" name="user[email]"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-5 control-label" for="user_password">Парола</label>
+                            <div class="col-xs-4">
+                                <input id="user_password" type="password" class="form-control" name="user[password]" />
+                            </div>
+                        </div>
+                            <div class="form-group">
+                                <label class="col-xs-5 control-label" for="user_roles">Тип потребител:</label>
+                                <div class="col-xs-4">
+                                    <select class="form-control" id="user_roles" name="user[roles]">
+                                        {%  for role in roles %}
+                                            <option value="{{ role.id }}">{{ role.getBgName() }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-5 control-label" for="user_status">Статус:</label>
+                                <div class="col-xs-4">
+                                    <input type="radio" class="radio-inline" id="user_status" value="1" name="user[status]">Активен
+                                    <input type="radio" class="radio-inline" id="user_status" value="0" name="user[status]">Неактивен
+                                </div>
+                            </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('create') }}" />
+
+                        <div class="form-group">
+                            <div class="col-sm-5 col-sm-offset-5">
+                                    <a class="btn btn-default" href="{{ path('all_user') }}"><i class="fa fa-ban"></i> Отказване</a>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Създаване</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+

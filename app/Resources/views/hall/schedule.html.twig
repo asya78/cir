@@ -12,6 +12,7 @@
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-lg-12 text-right">
                     <a class="btn btn-info" href="{{ path('requestHall_create') }}"><i class="fa fa-plus-circle"></i> Заявка на зала</a>
+                    <a class="btn btn-default" href="{{ path('hall_all') }}"><i class="fa fa-arrow-circle-left custom"></i> Обратно</a>
                 </div>
             </div>
             <div class="row">
@@ -25,7 +26,7 @@
                                     <th>Начален час</th>
                                     <th>Краен час</th>
                                     <th>Описание</th>
-                                    <th>Заявител</th>
+                                    <th>Заявил</th>
                                     <th>Действия</th>
                                 </tr>
                                 </thead>
@@ -39,8 +40,8 @@
                                         <td>{{ requestsHall.requester.fullName}}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a class="btn btn-danger" href="{{ path('requestHall_delete', {'id' :requestsHall.id}) }}">Изтриване</a>
-                                                <a class="btn btn-primary" href="{{ path('requestHall_edit', {'id' :requestsHall.id}) }}">Редактиране</a>
+                                                <a class="btn btn-warning" href="{{ path('requestHall_edit', {'id' :requestsHall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
+                                                <a class="btn btn-danger" href="{{ path('requestHall_delete', {'id' :requestsHall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
                                             </div>
                                         </td>
                                     </tr>

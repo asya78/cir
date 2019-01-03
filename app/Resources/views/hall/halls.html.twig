@@ -43,9 +43,10 @@
                                         <td>{% if hall.image is not null %} Да {% else %} Не {% endif %}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a class="btn btn-danger" href="{{ path('hall_delete', {'id' :hall.id}) }}">Изтриване</a>
-                                                <a class="btn btn-primary" href="{{ path('hall_edit', {'id' :hall.id}) }}">Редактиране</a>
-                                                <a class="btn btn-info" href="{{ path('hall_schedule', {'id' :hall.id}) }}">График</a>
+                                                <a class="btn btn-info" href=""><i class="fa fa-eye" title="Изглед"></i></a>
+                                                <a class="btn btn-success" href="{{ path('hall_schedule', {'id' :hall.id}) }}"><i class="fa fa-calendar" title="График"></i></a>
+                                                <a class="btn btn-warning" href="{{ path('hall_edit', {'id' :hall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
+                                                <a class="btn btn-danger" href="{{ path('hall_delete', {'id' :hall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
                                             </div>
                                         </td>
                                     </tr>

@@ -18,6 +18,7 @@ class HallController extends Controller
      * @Route("/hall/create", name="hall_create")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param Request $request
+     * @param null $numberHall
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function createAction(Request $request)

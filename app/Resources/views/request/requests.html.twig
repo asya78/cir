@@ -32,8 +32,8 @@
                                 </thead>
                                 <tbody>
                                 {% for request in requests %}
+                                    {% if request.requesterId == app.getUser().getId() or app.getUser().isAdmin() %}
                                     <tr>
-
                                         <td>{{ request.hall.number }}</td>
                                         <td>{{ request.date|date("Y/m/d") }}</td>
                                         <td>{{ request.timeStart|date('H:i') }}</td>
@@ -42,11 +42,13 @@
                                         <td>{{ request.requester.fullName}}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <a class="btn btn-danger" href="{{ path('requestHall_delete', {'id' :request.id}) }}">Изтриване</a>
-                                                <a class="btn btn-primary" href="{{ path('requestHall_edit', {'id' :request.id}) }}">Редактиране</a>
+                                                <a class="btn btn-info" href=""><i class="fa fa-eye" title="Изглед"></i></a>
+                                                <a class="btn btn-warning" href="{{ path('requestHall_edit', {'id' :request.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
+                                                <a class="btn btn-danger" href="{{ path('requestHall_delete', {'id' :request.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
                                             </div>
                                         </td>
                                     </tr>
+                                    {% endif %}
                                 {% endfor %}
                                 </tbody>
                             </table>
