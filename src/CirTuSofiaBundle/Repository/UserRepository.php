@@ -10,4 +10,5 @@ namespace CirTuSofiaBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

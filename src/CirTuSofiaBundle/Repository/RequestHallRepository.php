@@ -2,7 +2,6 @@
 
 namespace CirTuSofiaBundle\Repository;
 
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * RequestHallRepository

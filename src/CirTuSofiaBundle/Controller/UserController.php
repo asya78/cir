@@ -275,10 +275,13 @@ class UserController extends Controller
             ->getRepository(RequestHall::class)
             ->findBy(['requesterId'=> $user->getId()]);
 
+
         $requesterCount = $this
             ->getDoctrine()
             ->getRepository(RequestHall::class)
             ->countRequestsById($user->getId());
+
+//        Forward all requests of user to admin
 
         $roles = $this
             ->getDoctrine()

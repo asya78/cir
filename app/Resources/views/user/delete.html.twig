@@ -66,18 +66,7 @@
                                     </div>
                                 </div>
 
-                                {{ form_row(form._token) }}
 
-                                <div class="form-group">
-                                    <div class="col-sm-5 col-sm-offset-5">
-                                        {% if is_granted('ROLE_ADMIN') %}
-                                            <a class="btn btn-default" href="{{ path('all_user') }}"><i class="fa fa-ban"></i> Отказване</a>
-                                        {% else %}
-                                            <a class="btn btn-default" href="{{ path('view_user',{'id' :user.id}) }}"><i class="fa fa-ban"></i> Отказване</a>
-                                        {% endif %}
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-edit"></i> Изтриване</button>
-                                    </div>
-                                </div>
                         </div>
                         <div id="requests" class="tab-pane fade">
                             <div class="row">
@@ -121,6 +110,19 @@
                             </div>
                         </div>
                     </div>
+                        {{ form_row(form._token) }}
+
+                        <div class="form-group">
+                            <div class="col-sm-5 col-sm-offset-5">
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="btn btn-default" href="{{ path('all_user') }}"><i class="fa fa-ban"></i> Отказване</a>
+                                {% else %}
+                                    <a class="btn btn-default" href="{{ path('view_user',{'id' :user.id}) }}"><i class="fa fa-ban"></i> Отказване</a>
+                                {% endif %}
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-edit"></i> Изтриване</button>
+                            </div>
+                        </div>
+
                     </fieldset>
                 </form>
             </div>
