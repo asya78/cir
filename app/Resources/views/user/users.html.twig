@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+{% dump(users) %}
     <section>
         <div class="container">
             <div class="row">
@@ -39,7 +39,7 @@
                                         <td>{{ user.id }}</td>
                                         <td>{{ user.email }}</td>
                                         <td>{{ user.fullName }}</td>
-                                        <td>{{ user.roles|join(', ') }}</td>
+                                        <td>{{ user.roles|join(', ')|translate }}</td>
                                         <td>{{ user.status? 'Активен':'Неактивен' }}</td>
                                         {% if app.getUser().isAdmin()  %}
                                         <td>

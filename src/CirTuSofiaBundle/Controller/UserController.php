@@ -57,7 +57,7 @@ class UserController extends Controller
 
             $user->addRole($userRole);
 
-            $user->setStatus('true');
+            $user->setStatus($form->getData()->getStatus());
 
             $em = $this->getDoctrine()->getManager();
 
@@ -135,8 +135,6 @@ class UserController extends Controller
                 ->findOneBy(['name'=>'ROLE_USER']);
 
             $user->addRole($userRole);
-
-            $user->setStatus('true');
 
             $em = $this->getDoctrine()->getManager();
 
@@ -271,8 +269,6 @@ class UserController extends Controller
             ->getDoctrine()
             ->getRepository(User::class)
             ->find($id);
-
-
 
         $requests = $this
             ->getDoctrine()
