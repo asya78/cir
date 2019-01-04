@@ -278,8 +278,13 @@
                         <h4>{{ hall.number }}</h4>
                         <p class="text-muted">Брой места: {{ hall.seats }} <br />Проектор: {{ hall.projector? 'Да':'Не'   }}</p>
                         {% if app.getUser() and app.getUser().isAdmin() %}
-                        <a class="btn btn-danger" href="{{ path('hall_delete', {'id' :hall.id}) }}">Изтриване</a>
-                        <a class="btn btn-primary" href="{{ path('hall_edit', {'id' :hall.id}) }}">Редактиране</a>
+                            <div class="btn-group">
+                                <a class="btn btn-info" href="{{ path('view_hall', {'id' :hall.id}) }}"><i class="fa fa-eye" title="Изглед"></i></a>
+                                <a class="btn btn-default" href="{{ path('requestHall_create', {'id' :hall.id}) }}"><i class="fa fa-paper-plane" title="Заявка"></i></a>
+                                <a class="btn btn-success" href="{{ path('schedule_hall', {'id' :hall.id}) }}"><i class="fa fa-calendar" title="График"></i></a>
+                                <a class="btn btn-warning" href="{{ path('edit_hall', {'id' :hall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
+                                <a class="btn btn-danger" href="{{ path('delete_hall', {'id' :hall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
+                            </div>
                         {% endif %}
                     </div>
                 </div>
@@ -683,19 +688,19 @@
                                     <table class="table" border="0">
                                         <tbody class="pull-center">
                                         <tr>
-                                            <td>Брой места: {{ hall.seats }}</td>
+                                            <td class="no-border">Брой места: {{ hall.seats }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Брой компютри: {{ hall.computers }}</td>
+                                            <td class="no-border">Брой компютри: {{ hall.computers }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Ползване на лаптоп: {{ hall.laptop? 'Да':'Не' }}</td>
+                                            <td class="no-border">Ползване на лаптоп: {{ hall.laptop? 'Да':'Не' }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Ползване на проектор: {{ hall.laptop? 'Да':'Не' }}</td>
+                                            <td class="no-border">Ползване на проектор: {{ hall.laptop? 'Да':'Не' }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Описание: {{ hall.info }}</td>
+                                            <td class="no-border">Описание: {{ hall.info }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -705,13 +710,6 @@
                                     <h1 class="page-header">График на учебната зала</h1>
                                 </div>
                             </div>
-                            {% if app.user and (app.getUser().isAdmin() or app.getUser().isOperator()) %}
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col-lg-12 text-right">
-                                        <a class="btn btn-info" href="{{ path('requestHall_create') }}"><i class="fa fa-plus-circle"></i> Заявка</a>
-                                    </div>
-                                </div>
-                            {% endif %}
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="panel panel-default">
@@ -751,6 +749,7 @@
                             <div class="row" style="margin-bottom: 20px;">
                                 <div class="col-lg-12">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
+                                    <a class="btn btn-default" href="{{ path('requestHall_create', {'id' :hall.id}) }}"><i class="fa fa-paper-plane"> Заявка</i></a>
                                 </div>
                             </div>
 

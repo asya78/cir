@@ -11,12 +11,16 @@
                         <div class="form-group">
                             <label class="col-xs-5 control-label" for="hallId">Номер на зала:</label>
                             <div class="col-xs-4">
-                                <select class="form-control" id="hallId" name="hallId">
-                                    <option value="">Избери</option>
-                                    {%  for hall in halls %}
-                                        <option value="{{ hall.id }}">{{ hall.number }}</option>
-                                    {% endfor %}
-                                </select>
+                                    {% if hall.id is empty %}
+                                        <select class="form-control" id="hallId" name="hallId">
+                                            <option value="">Избери</option>
+                                            {%  for hall in halls %}
+                                                <option value="{{ hall.id }}">{{ hall.number }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    {% else %}
+                                        <input type="text" class="form-control" id="hallId" value="{{ hall.number }}" disabled />
+                                    {% endif %}
                             </div>
                         </div>
 
@@ -52,7 +56,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-5 col-sm-offset-5">
-                                <a class="btn btn-default" href="{{ path('hall_all') }}"><i class="fa fa-ban"></i> Отказване</a>
+                                <a class="btn btn-default" href="{{ path('all_hall') }}"><i class="fa fa-ban"></i> Отказване</a>
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Добавяне</button>
                             </div>
                         </div>

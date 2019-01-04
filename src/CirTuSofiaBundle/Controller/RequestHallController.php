@@ -24,6 +24,16 @@ class RequestHallController extends Controller
     {
         $halls = $this->getDoctrine()->getRepository(Hall::class)->findAll();
 
+        if (!is_null($request->query->get('id'))) {
+
+        $hall = $this->getDoctrine()->getRepository(Hall::class)->find($request->query->get('id'));
+
+        } else {
+
+            $hall = new Hall();
+
+        }
+
         $requestHall = new RequestHall();
 
         $form = $this->createForm(RequestHallType::class, $requestHall);
@@ -60,7 +70,7 @@ class RequestHallController extends Controller
 
         }
 
-        return $this->render('request/create.html.twig', array('form' => $form->createView(), 'halls'=> $halls));
+        return $this->render('request/create.html.twig', array('form' => $form->createView(), 'halls'=> $halls, 'hall'=>  $hall));
     }
 
     /**

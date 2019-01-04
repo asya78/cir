@@ -966,6 +966,6 @@ img::-moz-selection {
     vertical-align: middle;
 }
 
-.halls-modal .modal-body td{
+.table>tbody>tr>td.no-border {
    border: none;
 }

@@ -4,7 +4,7 @@
     <section>
         <div class="container ">
             <div class="well col-xs-8 col-xs-offset-2">
-                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('hall_create') }}" method="POST">
+                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('create_hall') }}" method="POST">
                         <fieldset>
                             <legend>Добавяне на зала</legend>
 
@@ -66,7 +66,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-5 col-sm-offset-5">
-                                    <a class="btn btn-default" href="{{ path('hall_all') }}"><i class="fa fa-ban"></i> Отказване</a>
+                                    <a class="btn btn-default" href="{{ path('all_hall') }}"><i class="fa fa-ban"></i> Отказване</a>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Добавяне</button>
                                 </div>
                             </div>

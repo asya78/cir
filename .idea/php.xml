@@ -45,12 +45,12 @@
   </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter home="C:\xampp\php\php.exe" id="542c5062-d7e5-498a-85c1-109072fbcc12" name="PHP" debugger_id="php.debugger.XDebug" />
+      <interpreter home="C:\xampp\php\php.exe" id="542c5062-d7e5-498a-85c1-109072fbcc12" name="PHP (project level)" debugger_id="php.debugger.XDebug" />
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
-      <interpreter name="PHP">
+      <interpreter name="PHP (project level)">
         <phpinfo binary_type="PHP" php_cgi="C:\xampp\php\php-cgi.exe" php_cli="C:\xampp\php\php.exe" path_separator=";" version="7.0.33">
           <additional_php_ini />
           <configuration_file>C:\xampp\php\php.ini</configuration_file>
