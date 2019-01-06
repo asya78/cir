@@ -57,7 +57,7 @@ class UserController extends Controller
 
             $user->addRole($userRole);
 
-            $user->setStatus('true');
+            $user->setStatus($form->getData()->getStatus());
 
             $em = $this->getDoctrine()->getManager();
 
@@ -135,8 +135,6 @@ class UserController extends Controller
                 ->findOneBy(['name'=>'ROLE_USER']);
 
             $user->addRole($userRole);
-
-            $user->setStatus('true');
 
             $em = $this->getDoctrine()->getManager();
 
@@ -272,17 +270,18 @@ class UserController extends Controller
             ->getRepository(User::class)
             ->find($id);
 
-
-
         $requests = $this
             ->getDoctrine()
             ->getRepository(RequestHall::class)
             ->findBy(['requesterId'=> $user->getId()]);
 
+
         $requesterCount = $this
             ->getDoctrine()
             ->getRepository(RequestHall::class)
             ->countRequestsById($user->getId());
+
+//        Forward all requests of user to admin
 
         $roles = $this
             ->getDoctrine()

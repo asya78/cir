@@ -44,6 +44,7 @@ class RequestHallController extends Controller
 
             if ($form->isSubmitted()) {
 
+
                 $currentUser = $this->getUser();
 
                 $requestHall->setRequester($currentUser);
@@ -51,9 +52,9 @@ class RequestHallController extends Controller
                 $requestHall->setRequesterId($currentUser->getId());
 
                 $currentHall = $this
-                    ->getDoctrine()
-                    ->getRepository(Hall::class)
-                    ->find(intval($form->getExtraData()['hallId']));
+                        ->getDoctrine()
+                        ->getRepository(Hall::class)
+                        ->find(intval($form->getExtraData()['hallId']));
 
                 $requestHall->setHallId($currentHall->getId());
 
@@ -212,8 +213,6 @@ class RequestHallController extends Controller
             ->find('1');
 
         $requestHall->setRequester($userAdmin);
-
-
 
         $em = $this->getDoctrine()->getManager();
 

@@ -33,9 +33,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>Тип потребител: <strong>{{  user.roles|join(', ') }}</strong></p>
+                                    <p>Тип потребител: <strong>{{  user.roles|join(', ')|translate }}</strong></p>
                                 </div>
                             </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>Статус: <strong>{{  user.status? 'Активен':'Неактивен' }}</strong></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
