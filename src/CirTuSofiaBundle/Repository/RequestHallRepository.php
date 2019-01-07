@@ -22,4 +22,15 @@ class RequestHallRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getSingleScalarResult();
     }
+
+    public function allRequestsByHall($id)
+    {
+        return $this
+            ->createQueryBuilder('h')
+            ->select('h')
+            ->where('h.hallId= :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getScalarResult();
+    }
 }

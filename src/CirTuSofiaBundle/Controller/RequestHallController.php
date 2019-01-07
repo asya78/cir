@@ -62,6 +62,19 @@ class RequestHallController extends Controller
 
                 $requestHall->setHall($currentHall);
 
+                $nowDate = new \DateTime();
+
+                $requestDate = $requestHall->getDate();
+
+                if ($requestDate < $nowDate) {
+                    $this->addFlash('message','Датата, която въведохте е минала.');
+                    return $this->render('request/create.html.twig',array(
+                            'form' => $form->createView(),
+                            'halls'=> $halls,
+                            'hall'=>  $hall)
+                    );
+                }
+
                 $em = $this->getDoctrine()->getManager();
 
                 $em->persist($requestHall);
@@ -142,7 +155,7 @@ class RequestHallController extends Controller
                 $currentHall = $this
                     ->getDoctrine()
                     ->getRepository(Hall::class)
-                    ->find(intval($form->getExtraData()['hallId']));
+                    ->find($requestHall->getHallId());
 
                 $requestHall->setHallId($currentHall->getId());
 
@@ -201,15 +214,6 @@ class RequestHallController extends Controller
                 $requestHall->setRequester($currentUser);
 
                 $requestHall->setRequesterId($currentUser->getId());
-
-                $currentHall = $this
-                    ->getDoctrine()
-                    ->getRepository(Hall::class)
-                    ->find(intval($form->getExtraData()['hallId']));
-
-                $requestHall->setHallId($currentHall->getId());
-
-                $requestHall->setHall($currentHall);
 
                 $em = $this->getDoctrine()->getManager();
 

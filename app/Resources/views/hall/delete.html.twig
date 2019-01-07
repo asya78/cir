@@ -3,6 +3,11 @@
 {% block body %}
     <section>
         <div class="container ">
+            {%  for msg in app.session.flashBag.get('message') %}
+                <div class="alert alert-danger">
+                    {{ msg }}
+                </div>
+            {% endfor %}
             <div class="well col-xs-8 col-xs-offset-2">
                 <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('delete_hall',{id: hall.id}) }}" method="POST">
                     <fieldset>
