@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class RequestHallController extends Controller
 {
@@ -71,9 +72,20 @@ class RequestHallController extends Controller
                     return $this->render('request/create.html.twig',array(
                             'form' => $form->createView(),
                             'halls'=> $halls,
-                            'hall'=>  $hall)
+                            'hall' =>  $hall)
                     );
                 }
+
+
+                $requestTimeStart = new \DateTime($requestHall->getTimeStart()->format('H:i:s'));
+                $requestDate2 = new \DateTime($requestHall->getDate()->format('Y:m:d'));
+                dump(gettype($requestDate2));
+                exit;
+                $freeRequest = $this
+                    ->getDoctrine()
+                    ->getRepository(RequestHall::class)
+                    ->requestByDateAndTime($requestHall->getHallId(),$requestDate->format('Y-m-d'),$requestTimeStart);
+
 
                 $em = $this->getDoctrine()->getManager();
 

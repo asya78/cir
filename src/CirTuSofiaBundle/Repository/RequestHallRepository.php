@@ -33,4 +33,17 @@ class RequestHallRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getScalarResult();
     }
+
+    public function requestByDateAndTime($id,$date, $timeStart)
+    {
+        return $this
+            ->createQueryBuilder('d')
+            ->select('d')
+            ->where('d.hallId= :$id')
+            ->andwhere('d.date= :$date')
+            ->andWhere('d.timeStart= :$timeStart')
+            ->setParameters(array('hallId'=>$id, 'date'=>$date,'timeStart'=>$timeStart))
+            ->getQuery()
+            ->getResult();
+    }
 }
