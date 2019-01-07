@@ -280,7 +280,7 @@
                         {% if app.getUser() and app.getUser().isAdmin() %}
                             <div class="btn-group">
                                 <a class="btn btn-info" href="{{ path('view_hall', {'id' :hall.id}) }}"><i class="fa fa-eye" title="Изглед"></i></a>
-                                <a class="btn btn-default" href="{{ path('requestHall_create', {'id' :hall.id}) }}"><i class="fa fa-paper-plane" title="Заявка"></i></a>
+                                <a class="btn btn-default" href="{{ path('create_requestHall', {'id' :hall.id}) }}"><i class="fa fa-paper-plane" title="Заявка"></i></a>
                                 <a class="btn btn-success" href="{{ path('schedule_hall', {'id' :hall.id}) }}"><i class="fa fa-calendar" title="График"></i></a>
                                 <a class="btn btn-warning" href="{{ path('edit_hall', {'id' :hall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
                                 <a class="btn btn-danger" href="{{ path('delete_hall', {'id' :hall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
@@ -749,7 +749,7 @@
                             <div class="row" style="margin-bottom: 20px;">
                                 <div class="col-lg-12">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Затвори</button>
-                                    <a class="btn btn-default" href="{{ path('requestHall_create', {'id' :hall.id}) }}"><i class="fa fa-paper-plane"> Заявка</i></a>
+                                    <a class="btn btn-default" href="{{ path('create_requestHall', {'id' :hall.id}) }}"><i class="fa fa-paper-plane"> Заявка</i></a>
                                 </div>
                             </div>
 

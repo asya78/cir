@@ -10,12 +10,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class RequestHallController extends Controller
 {
     /**
-     * @Route("/requestHall/create", name="requestHall_create")
+     * @Route("/requestHall/create", name="create_requestHall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -44,6 +45,7 @@ class RequestHallController extends Controller
 
             if ($form->isSubmitted()) {
 
+                $requestHall = $form->getData();
 
                 $currentUser = $this->getUser();
 
@@ -51,12 +53,12 @@ class RequestHallController extends Controller
 
                 $requestHall->setRequesterId($currentUser->getId());
 
-                $currentHall = $this
-                        ->getDoctrine()
-                        ->getRepository(Hall::class)
-                        ->find(intval($form->getExtraData()['hallId']));
-
-                $requestHall->setHallId($currentHall->getId());
+                if (!is_null($request->query->get('id'))) {
+                    $currentHall = $this->getDoctrine()->getRepository(Hall::class)->find($request->query->get('id'));
+                    $requestHall->setHallId($currentHall->getId());
+                } else {
+                    $currentHall = $this->getDoctrine()->getRepository(Hall::class)->find($requestHall->getHallId());
+                }
 
                 $requestHall->setHall($currentHall);
 
@@ -66,16 +68,44 @@ class RequestHallController extends Controller
 
                 $em->flush();
 
-                return $this->redirectToRoute('requestHall_all');
+                return $this->redirectToRoute('all_requestHall');
             }
 
         }
 
-        return $this->render('request/create.html.twig', array('form' => $form->createView(), 'halls'=> $halls, 'hall'=>  $hall));
+        return $this->render('request/create.html.twig', array(
+            'form' => $form->createView(),
+            'halls'=> $halls,
+            'hall'=>  $hall)
+        );
     }
 
     /**
-     * @Route("/requestHall/edit/{id}", name="requestHall_edit")
+     * @Route("/requestHall/view/{id}", name="view_requestHall")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
+     * @param $id
+     * @return  \Symfony\Component\HttpFoundation\Response
+     */
+    public function viewRequestHall($id)
+    {
+        $requestHall = $this
+            ->getDoctrine()
+            ->getRepository(RequestHall::class)
+            ->find($id);
+
+        $hall = $this
+            ->getDoctrine()
+            ->getRepository(Hall::class)
+            ->find($requestHall->getHallId());
+
+        return $this->render('request/view.html.twig',array(
+            'requestHall'=>$requestHall,
+            'hall'=>$hall)
+        );
+    }
+
+    /**
+     * @Route("/requestHall/edit/{id}", name="edit_requestHall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param $id
      * @param Request $request
@@ -124,17 +154,21 @@ class RequestHallController extends Controller
 
                 $em->flush();
 
-                return $this->redirectToRoute('requestHall_all');
+                return $this->redirectToRoute('all_requestHall');
             }
 
         }
 
-        return $this->render('request/edit.html.twig', array('form' => $form->createView(), 'requestHall'=>$requestHall,'halls'=> $halls));
+        return $this->render('request/edit.html.twig', array(
+            'form' => $form->createView(),
+            'requestHall'=>$requestHall,
+            'halls'=> $halls)
+        );
 
     }
 
     /**
-     * @Route("/requestHall/delete/{id}", name="requestHall_delete")
+     * @Route("/requestHall/delete/{id}", name="delete_requestHall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param $id
      * @param Request $request
@@ -183,17 +217,21 @@ class RequestHallController extends Controller
 
                 $em->flush();
 
-                return $this->redirectToRoute('requestHall_all');
+                return $this->redirectToRoute('all_requestHall');
             }
 
         }
 
-        return $this->render('request/delete.html.twig', array('form' => $form->createView(), 'requestHall'=>$requestHall,'halls'=> $halls));
+        return $this->render('request/delete.html.twig', array(
+            'form' => $form->createView(),
+            'requestHall'=>$requestHall,
+            'halls'=> $halls)
+        );
 
     }
 
     /**
-     * @Route("/requestHall/forwarding/{id}", name="requestHall_forwarding")
+     * @Route("/requestHall/forwarding/{id}", name="forwarding_requestHall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      * @param $id
      * @return  \Symfony\Component\HttpFoundation\Response
@@ -220,20 +258,20 @@ class RequestHallController extends Controller
 
         $em->flush();
 
-        return $this->redirectToRoute('delete_user',['id'=> $requesterId]);
+        return $this->redirectToRoute('delete_user',array('id'=> $requesterId));
 
 
     }
 
     /**
-     * @Route("/requestHall/all", name="requestHall_all")
+     * @Route("/requestHall/all", name="all_requestHall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
      */
     public function allRequestHalls()
     {
         $requests = $this->getDoctrine()->getRepository(RequestHall::class)->findAll();
 
-        return $this->render('request/requests.html.twig',['requests'=>$requests]);
+        return $this->render('request/requests.html.twig',array('requests'=>$requests));
     }
 
 }

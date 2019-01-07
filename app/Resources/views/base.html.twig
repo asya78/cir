@@ -80,7 +80,7 @@
                                         {% if app.user and app.getUser().isAdmin() %}
                                         {% if app.getUser().isLector() %}
                                         <li>
-                                            <a href="{{ path('requestHall_all') }}">Заявки</a>
+                                            <a href="{{ path('all_requestHall') }}">Заявки</a>
                                         </li>
                                         {% endif %}
                                         {% if app.getUser().isOperator() %}
