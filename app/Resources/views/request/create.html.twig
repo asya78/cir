@@ -4,7 +4,7 @@
     <section>
         <div class="container ">
             <div class="well col-xs-8 col-xs-offset-2">
-                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('requestHall_create', {'id': hall.id}) }}" method="POST">
+                <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('create_requestHall', {'id': hall.id}) }}" method="POST">
                     <fieldset>
                         <legend>Заявка на зала</legend>
 
@@ -19,7 +19,9 @@
                                             {% endfor %}
                                         </select>
                                     {% else %}
-                                        <input type="text" class="form-control" id="hallId" value="{{ hall.number }}" disabled /
+                                        <select class="form-control" id="hallId" name="hallId" disabled>
+                                                <option value="{{ hall.id }}">{{ hall.number }}</option>
+                                        </select>
                                     {% endif %}
                             </div>
                         </div>

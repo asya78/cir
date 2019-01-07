@@ -1,62 +1,54 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-7 col-sm-offset-2">
-                    <h1 class="page-header">{{ hall.number }}</h1>
+                    <h1 class="page-header">Заявка за зала {{ hall.number }}</h1>
                 </div>
             </div>
 
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-xs-12 col-sm-7 col-sm-offset-2 text-right">
-                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_LECTOR') %}
-                    <a class="btn btn-default" href="{{ path('create_requestHall', {'id': hall.id}) }}"><i class="fa fa-paper-plane"></i> Заявка</a>
-                    <a class="btn btn-warning" href="{{ path('edit_hall',{'id': hall.id}) }}"><i class="fa fa-edit"></i> Редактиране</a>
+                    {% if is_granted('ROLE_ADMIN') or (app.getUser().getId() == requestHall.requesterId) %}
+                        <a class="btn btn-warning" href="{{ path('edit_requestHall',{'id': requestHall.id}) }}"><i class="fa fa-edit"></i> Редактиране</a>
                     {% endif %}
-                    <a class="btn btn-default" href="{{ path('all_hall') }}"><i class="fa fa-arrow-circle-o-left"></i> Назад</a>
+                    <a class="btn btn-default" href="{{ path('all_requestHall') }}"><i class="fa fa-arrow-circle-o-left"></i> Назад</a>
                 </div>
             </div>
             <div class="row col-xs-12 col-sm-7 col-sm-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="col-md-6">
-                            <img class="img-responsive img-centered" src="{{ asset('uploads/images/') ~ hall.image }}" alt="">
-                        </div>
-                        <div class="col-md-6">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>Брой места: <strong>{{ hall.seats }}</strong></p>
+                                    <p>Дата: <strong>{{ requestHall.date|date("Y/m/d") }}</strong></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>Брой компютри: <strong>{{ hall.computers }}</strong></p>
+                                    <p>Начален час: <strong>{{ requestHall.timeStart|date('H:i') }}</strong></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>Възможност за внасяне на лаптоп: <strong>{{  hall.laptop? 'Да':'Не' }}</strong></p>
+                                    <p>Краен час: <strong>{{  requestHall.timeEnd|date('H:i') }}</strong></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>Възможност за внасяне на проектор: <strong>{{  hall.projector? 'Да':'Не' }}</strong></p>
+                                    <p>Описание: <strong>{{  requestHall.description }}</strong></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <p>Допълнителна информация: <strong>{{  hall.info }}</strong></p>
+                                    <p>Заявил: <strong>{{ requestHall.requester.fullName }}</strong></p>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 {% endblock %}
 
