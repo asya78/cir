@@ -5,6 +5,7 @@ namespace CirTuSofiaBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -24,6 +25,11 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @Assert\Email(
+     *     message = "'{{ value }}' e невалидна ел. поща.",
+     *     checkMX = true
+     * )
+     * @Assert\NotBlank()
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
@@ -31,6 +37,9 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @Assert\NotBlank(
+     *     message="Попълнете полето 'парола'."
+     * )
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=255)
@@ -38,6 +47,9 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @Assert\NotBlank(
+     *     message="Попълнете полето 'име'."
+     * )
      * @var string
      *
      * @ORM\Column(name="fullName", type="string", length=255)

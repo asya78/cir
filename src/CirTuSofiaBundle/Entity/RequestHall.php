@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * RequestHall
@@ -25,6 +26,7 @@ class RequestHall
     private $id;
 
     /**
+     * @Assert\GreaterThanOrEqual("today")
      * @var string
      *
      * @ORM\Column(name="date", type="date", nullable=true)

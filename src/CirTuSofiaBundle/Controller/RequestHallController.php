@@ -55,10 +55,19 @@ class RequestHallController extends Controller
                 $requestHall->setRequesterId($currentUser->getId());
 
                 if (!is_null($request->query->get('id'))) {
-                    $currentHall = $this->getDoctrine()->getRepository(Hall::class)->find($request->query->get('id'));
+
+                    $currentHall = $this
+                        ->getDoctrine()
+                        ->getRepository(Hall::class)
+                        ->find($request->query->get('id'));
+
                     $requestHall->setHallId($currentHall->getId());
+
                 } else {
-                    $currentHall = $this->getDoctrine()->getRepository(Hall::class)->find($requestHall->getHallId());
+                    $currentHall = $this
+                        ->getDoctrine()
+                        ->getRepository(Hall::class)
+                        ->find($requestHall->getHallId());
                 }
 
                 $requestHall->setHall($currentHall);
@@ -72,20 +81,30 @@ class RequestHallController extends Controller
                     return $this->render('request/create.html.twig',array(
                             'form' => $form->createView(),
                             'halls'=> $halls,
-                            'hall' =>  $hall)
+                            'hall' => $hall,
+                            'id' => $hall->getId())
                     );
                 }
 
 
-                $requestTimeStart = new \DateTime($requestHall->getTimeStart()->format('H:i:s'));
-                $requestDate2 = new \DateTime($requestHall->getDate()->format('Y:m:d'));
-                dump(gettype($requestDate2));
-                exit;
-                $freeRequest = $this
+                $requestTimeStart = (string) ($requestHall->getTimeStart()->format('H:i:s'));
+
+                $requestDateString = (string) ($requestHall->getDate()->format('Y:m:d'));
+
+                $freeRequestHall = $this
                     ->getDoctrine()
                     ->getRepository(RequestHall::class)
-                    ->requestByDateAndTime($requestHall->getHallId(),$requestDate->format('Y-m-d'),$requestTimeStart);
+                    ->requestByDateAndTime(intval($requestHall->getHallId()), $requestDateString, $requestTimeStart);
 
+                if(!empty($freeRequestHall)){
+                    $this->addFlash('message', 'Залата' . ' не е свободна за дата: ' . $requestDateString . ' и час: '. $requestTimeStart);
+                    return $this->render('request/create.html.twig',array(
+                            'form' => $form->createView(),
+                            'halls'=> $halls,
+                            'hall' =>  $hall,
+                            'id' => $requestHall->getHallId())
+                    );
+                }
 
                 $em = $this->getDoctrine()->getManager();
 

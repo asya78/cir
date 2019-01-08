@@ -30,6 +30,10 @@ class UserController extends Controller
 
         if ($form->isSubmitted()) {
 
+            $validator = $this->get('validator');
+
+            $errors = $validator->validate($user);
+
             $emailForm = $form->getData()->getUsername();
 
             $userNew = $this
@@ -41,7 +45,13 @@ class UserController extends Controller
 
                 $this->addFlash('message','Има регистриран потребител с '. $emailForm);
 
-                return $this->render('user/register.html.twig');
+                return $this->render('user/register.html.twig',['errors' =>$errors]);
+            }
+
+            if(count($errors)>0){
+
+                return $this->render('user/register.html.twig', ['errors' =>$errors]);
+
             }
 
             $password = $this
