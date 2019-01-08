@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class RequestHallController extends Controller
 {
@@ -61,6 +62,30 @@ class RequestHallController extends Controller
                 }
 
                 $requestHall->setHall($currentHall);
+
+                $nowDate = new \DateTime();
+
+                $requestDate = $requestHall->getDate();
+
+                if ($requestDate < $nowDate) {
+                    $this->addFlash('message','Датата, която въведохте е минала.');
+                    return $this->render('request/create.html.twig',array(
+                            'form' => $form->createView(),
+                            'halls'=> $halls,
+                            'hall' =>  $hall)
+                    );
+                }
+
+
+                $requestTimeStart = new \DateTime($requestHall->getTimeStart()->format('H:i:s'));
+                $requestDate2 = new \DateTime($requestHall->getDate()->format('Y:m:d'));
+                dump(gettype($requestDate2));
+                exit;
+                $freeRequest = $this
+                    ->getDoctrine()
+                    ->getRepository(RequestHall::class)
+                    ->requestByDateAndTime($requestHall->getHallId(),$requestDate->format('Y-m-d'),$requestTimeStart);
+
 
                 $em = $this->getDoctrine()->getManager();
 
@@ -142,7 +167,7 @@ class RequestHallController extends Controller
                 $currentHall = $this
                     ->getDoctrine()
                     ->getRepository(Hall::class)
-                    ->find(intval($form->getExtraData()['hallId']));
+                    ->find($requestHall->getHallId());
 
                 $requestHall->setHallId($currentHall->getId());
 
@@ -201,15 +226,6 @@ class RequestHallController extends Controller
                 $requestHall->setRequester($currentUser);
 
                 $requestHall->setRequesterId($currentUser->getId());
-
-                $currentHall = $this
-                    ->getDoctrine()
-                    ->getRepository(Hall::class)
-                    ->find(intval($form->getExtraData()['hallId']));
-
-                $requestHall->setHallId($currentHall->getId());
-
-                $requestHall->setHall($currentHall);
 
                 $em = $this->getDoctrine()->getManager();
 

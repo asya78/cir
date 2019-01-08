@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
+-- version 4.5.0.2
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2019 at 05:27 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.0.33
+-- Generation Time:  7 яну 2019 в 14:48
+-- Версия на сървъра: 10.0.17-MariaDB
+-- PHP Version: 7.0.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `halls`
+-- Структура на таблица `halls`
 --
 
 CREATE TABLE `halls` (
@@ -41,20 +39,23 @@ CREATE TABLE `halls` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `halls`
+-- Схема на данните от таблица `halls`
 --
 
 INSERT INTO `halls` (`id`, `number`, `seats`, `computers`, `laptop`, `projector`, `info`, `image`, `userId`) VALUES
-(3, '2204A', 12, 11, 0, 0, 'Test 3', '8d906cea90bfea7d2c24ce32e42c7b45.jpeg', 1),
-(4, '214AA', 11, 3, 0, 1, 'asfasfasgdsadgsadg', 'ae38af70fdbdf0d17013cecc44c96763.jpeg', 1),
-(5, '2121', 10, 10, 0, 0, 'Aaaaaaaaaaaaaa', 'e13382b82c7605abc2e157774da39733.jpeg', 1),
-(8, '4112', 12, 11, 0, 0, 'Проба admin', '38dd870f5e14a07e0a909cc6ee630669.jpeg', 1),
-(9, '12A3', 12, 11, 0, 0, 'adsa', 'b8d0783477c5894981df448b11b3af4b.jpeg', 1);
+(1, '2101A', 12, 12, 0, 0, 'Залата не се ползва от външни лица.', 'c1de78c9e5fc67a93fd8ac4428c22467.jpeg', 1),
+(2, '2101В', 12, 12, 0, 0, 'Залата може да се ползва и от външни лица.', 'fd1fda28350c95d1a2f32143965a811e.jpeg', 1),
+(3, '2101Г', 12, 12, 0, 0, 'Залата не се ползва от външни лица.', '42eb32abf5568d68681c3ee6aa89b2f6.jpeg', 1),
+(4, '2108А', 20, 20, 1, 1, 'Залата може да се ползва и от външни лица.', '13beef192ea070a172a4dce1a0927dcb.jpeg', 1),
+(5, '2108Б', 20, 20, 1, 1, 'Залата може да се ползва и от външни лица.', '1e3edc08f59e113247cf027d9d7eba74.jpeg', 1),
+(6, '4130А', 15, 15, 1, 1, 'Залата може да се ползва и от външни лица.', '75c2063fe44a6b8b0e53797f8b412f65.jpeg', 1),
+(7, '4130Б', 15, 15, 0, 0, 'Залата не се ползва от външни лица.', '10b0334596d8304d3949416aac068bfe.jpeg', 1),
+(8, '4132', 12, 12, 0, 0, 'Залата не се ползва от външни лица.', '8907a5e4ccbe74afbf43f1a3fed9303f.jpeg', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `problems`
+-- Структура на таблица `problems`
 --
 
 CREATE TABLE `problems` (
@@ -66,7 +67,7 @@ CREATE TABLE `problems` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `requests`
+-- Структура на таблица `requests`
 --
 
 CREATE TABLE `requests` (
@@ -81,27 +82,24 @@ CREATE TABLE `requests` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `requests`
+-- Схема на данните от таблица `requests`
 --
 
 INSERT INTO `requests` (`id`, `date`, `timeStart`, `timeEnd`, `description`, `hallId`, `status`, `requesterId`) VALUES
-(7, '2018-12-19', '23:00:00', '23:59:00', 'Tema 2121', 5, 'Чакаща', 1),
-(8, '2018-12-14', '02:04:00', '02:09:00', 'Tema 1', 3, 'Чакаща', 1),
-(9, '2018-12-31', '03:00:00', '03:30:00', 'Заявка операотр 10', 8, 'Чакаща', 1),
-(10, '2019-02-02', '01:00:00', '02:00:00', 'Оператор 10 - заявка 1', 9, 'Чакаща', 1),
-(11, '2019-01-01', '01:00:00', '02:00:00', 'Оператор 10 - заявка 2', 8, 'Чакаща', 1),
-(12, '2019-12-30', '01:00:00', '02:00:00', 'Заявка 1', 4, 'Чакаща', 1),
-(13, '2019-01-01', '01:00:00', '02:01:00', 'Заявка 2', 3, 'Чакаща', 1),
-(14, '2019-01-08', '01:00:00', '02:00:00', 'Nova zaqwka', 9, 'Чакаща', 1),
-(15, '2019-01-08', '01:00:00', '03:00:00', 'Nova zaqvka', 9, 'Чакаща', 1),
-(16, '2019-01-18', '01:00:00', '02:00:00', 'Ot zala', 3, 'Чакаща', 1),
-(17, '2019-01-09', '13:00:00', '14:00:00', '1', 3, 'Чакаща', 1),
-(18, '2019-01-09', '13:00:00', '14:00:00', '1', 3, 'Чакаща', 1);
+(1, '2019-01-14', '08:00:00', '09:00:00', 'Тема: Автоматизирани производствени системи\r\nСпециалност: Автоматика, информационна и управляваща техника', 4, 'Чакаща', 2),
+(2, '2019-01-17', '14:00:00', '16:00:00', 'Тема: Компютърно моделиране на полета и процеси \r\nСпециалност: Електрически машини', 1, 'Чакаща', 5),
+(3, '2019-01-25', '10:00:00', '11:00:00', 'Тема: Компютърно конструиране на електрически машини \r\nСпециалност: Електрически машини', 5, 'Чакаща', 5),
+(4, '2019-01-21', '09:00:00', '10:00:00', 'Тема: Компютърно проектиране ;\r\nСпециалност: Инженерен дизайн', 7, 'Чакаща', 6),
+(5, '2019-01-29', '17:00:00', '18:30:00', 'Тема: Информатика I ;\r\nСпециалност: Мехатроника', 3, 'Чакаща', 6),
+(6, '2019-01-24', '15:00:00', '16:00:00', 'Тема: Информационни технологии в телекомуникациите; Специалност: Телекомуникации', 1, 'Чакаща', 7),
+(7, '2019-01-31', '08:00:00', '10:00:00', 'Тема: Мултимедийни мрежи; Специалност: Телекомуникации', 8, 'Чакаща', 7),
+(8, '2019-02-05', '09:00:00', '11:00:00', 'Тема: Измерване, контрол и комуникации в електроенергетични системи ; Специалност: Електроснабдяване, електрообзавеждане и електротранспорт', 6, 'Чакаща', 5),
+(9, '2019-01-21', '16:00:00', '17:00:00', 'Тема: Компютърно симулиране на електрически системи ; Специалност: Електрически апарати', 2, 'Чакаща', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `request_hall`
+-- Структура на таблица `request_hall`
 --
 
 CREATE TABLE `request_hall` (
@@ -116,7 +114,7 @@ CREATE TABLE `request_hall` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Структура на таблица `roles`
 --
 
 CREATE TABLE `roles` (
@@ -126,7 +124,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Схема на данните от таблица `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `bgName`) VALUES
@@ -138,7 +136,7 @@ INSERT INTO `roles` (`id`, `name`, `bgName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура на таблица `users`
 --
 
 CREATE TABLE `users` (
@@ -147,25 +145,25 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `fullName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 CHECKSUM=1 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Схема на данните от таблица `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `fullName`, `status`) VALUES
-(1, 'asya@rainbowgrp.co.uk', '$2y$13$TmnD5Kh6vazbjRFmV4k5d.FvZrAoQHt.X6lE/KNm6/Ukg2Qqt5sKy', 'Ася Тотева', 1),
-(5, 'lector@tu-sofia.bg', '$2y$13$7GFpuC9gc5nOGghzRynfOOjubSJufVZNnbCPhSsZueT9m17B/l8g.', 'Преподавател', 1),
-(11, 'operator@tu-sofia.bg', '$2y$13$GmEGMR5xf.4HuY9ep3e32OZsbL5PP.KgJmOLq1H/V3jMcwLzM0Ejy', 'Оператор', 0),
-(12, 'potrebitel@tu-sofia.bg', '$2y$13$6euYGifHXUCn.iv/2pbwwubkGSCFpSrlhQ9Dm9i8lrMBuFt0wXi56', 'Потребител', 0),
-(13, 'potrebitel2@tu-sofia.bg', '$2y$13$GroEsAHUeUWUjCStsiq3wOAtp9IO6XVRV1X.ek3R9H.x/IW/cGlZ6', 'Потребител', 0),
-(14, 'a@abv.bg', '$2y$13$8GsR9rtXkWTMF79Na3KL1uf8AXX2f0KBHxdslljZVlvv2iK4n31NO', 'safaf', 0),
-(15, 'lector2@tu-sofia.bg', '$2y$13$d7UqUjlUeHs1Vh263XdNne1O10diQxxR44svapnAKt4Swr9uYtoQW', 'Преподавател 2', 0);
+(1, 'admin@tu-sofia.bg', '$2y$13$MywZoX.4aQwilIml4Sg9Ce4mAOpb24tfDUA9NCjU3mFQGr0cx8gRu', 'Администратор', 1),
+(2, 'lectorFA@tu-sofia.bg', '$2y$13$FurUnjxTy0e7dZl23geljOdJWGbarw6DQicgdCatT2cRJJHrXfFua', 'Преподавател ФА', 1),
+(3, 'operator@tu-sofia.bg', '$2y$13$ne83tjakAvuBy1p.cklJwu4aKUmv/shbWj9GTjk2bXa1LvZejWU.C', 'Оператор', 1),
+(4, 'user@tu-sofia.bg', '$2y$13$IoHeeVfQJE6r.4U0AG9xOuPBV/Kx5dPcPArahKjQjfP1LDM8chi5i', 'Потребител', 1),
+(5, 'lectorEF@tu-sofia.bg', '$2y$13$x3I2JsNddHOurf9r0p29uOag28srT/nASqZwrkKC5sP45zEJGsb3i', 'Преподавател ЕФ', 1),
+(6, 'lectorMF@tu-sofia.bg', '$2y$13$dVuQgtr1cfkWb6PfRtQZ5et.R..0iIyowEkjjCWkqYegoItqbYS/6', 'Преподавател МФ', 1),
+(7, 'lectorFT@tu-sofia.bg', '$2y$13$ACQ4yzjYFqQPvTJgOvJ2ROyVRy5vAzUt1whiwrKRZnsNp2ea75IOW', 'Преподавател ФТ', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_roles`
+-- Структура на таблица `users_roles`
 --
 
 CREATE TABLE `users_roles` (
@@ -174,17 +172,17 @@ CREATE TABLE `users_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users_roles`
+-- Схема на данните от таблица `users_roles`
 --
 
 INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES
 (1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
 (5, 2),
-(11, 4),
-(12, 4),
-(13, 4),
-(14, 4),
-(15, 4);
+(6, 4),
+(7, 2);
 
 --
 -- Indexes for dumped tables
@@ -249,68 +247,61 @@ ALTER TABLE `users_roles`
 -- AUTO_INCREMENT for table `halls`
 --
 ALTER TABLE `halls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `problems`
 --
 ALTER TABLE `problems`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `request_hall`
 --
 ALTER TABLE `request_hall`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- Ограничения за дъмпнати таблици
+--
 
 --
--- Constraints for dumped tables
---
-
---
--- Constraints for table `halls`
+-- Ограничения за таблица `halls`
 --
 ALTER TABLE `halls`
   ADD CONSTRAINT `FK_AD736D9E64B64DCC` FOREIGN KEY (`userId`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `problems`
+-- Ограничения за таблица `problems`
 --
 ALTER TABLE `problems`
   ADD CONSTRAINT `FK_8E66624552AFCFD6` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`);
 
 --
--- Constraints for table `requests`
+-- Ограничения за таблица `requests`
 --
 ALTER TABLE `requests`
   ADD CONSTRAINT `FK_7B85D65191EC6DA8` FOREIGN KEY (`requesterId`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `FK_7B85D651AA6E599B` FOREIGN KEY (`hallId`) REFERENCES `halls` (`id`);
 
 --
--- Constraints for table `users_roles`
+-- Ограничения за таблица `users_roles`
 --
 ALTER TABLE `users_roles`
   ADD CONSTRAINT `FK_51498A8EA76ED395` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_51498A8ED60322AC` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

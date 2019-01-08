@@ -4,6 +4,11 @@
     <section>
         <div class="container ">
             <div class="well col-xs-8 col-xs-offset-2">
+                {%  for msg in app.session.flashBag.get('message') %}
+                    <div class="alert alert-danger">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
                 <form class="form-horizontal" enctype="multipart/form-data"  action="{{ path('create_requestHall', {'id': hall.id}) }}" method="POST">
                     <fieldset>
                         <legend>Заявка на зала</legend>

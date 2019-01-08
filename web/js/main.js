@@ -39,8 +39,11 @@ $(document).ready( function() {
         }
     });
 
+
     $('.js-datepicker').datepicker({
-        format: 'yy-mm-d'
+        format: 'yy-mm-d',
+        startDate : new Date(),
+        todayHighlight : true
     });
 
 });

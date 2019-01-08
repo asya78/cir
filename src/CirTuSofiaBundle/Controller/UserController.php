@@ -112,6 +112,7 @@ class UserController extends Controller
                 ->getRepository(User::class)
                 ->findOneBy(['email'=>$emailForm]);
 
+
             if (null !== $userNew) {
 
                 $this->addFlash('message','Има регистриран потребител с '. $emailForm);
@@ -132,7 +133,7 @@ class UserController extends Controller
             $userRole = $this
                 ->getDoctrine()
                 ->getRepository(Role::class)
-                ->findOneBy(['name'=>'ROLE_USER']);
+                ->findOneBy(['id'=>$form->get('roles')->getData()]);
 
             $user->addRole($userRole);
 
@@ -281,6 +282,8 @@ class UserController extends Controller
             ->getRepository(RequestHall::class)
             ->countRequestsById($user->getId());
 
+
+
 //        Forward all requests of user to admin
 
         $roles = $this
@@ -298,6 +301,19 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if ( intval($requesterCount) !== 0 ) {
+                $this->addFlash('message','Този потребител има '. intval($requesterCount) . " заявки. Моля първо пренасочете заявките.");
+                return $this->render('user/delete.html.twig',array(
+                    'form'=>$form->createView(),
+                    'user'=>$user,
+                    'requests'=>$requests,
+                    'count'=>$requesterCount,
+                    'roles' => $roles,
+                    'userRole'=>$userRole
+                ));
+            }
+
 
             $em = $this->getDoctrine()->getManager();
 

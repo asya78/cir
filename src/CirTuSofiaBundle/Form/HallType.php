@@ -43,7 +43,7 @@ class HallType extends AbstractType
                 'empty_data' => null,
                 'choices_as_values' => true,
             ))
-            ->add('info',TextType::class)
+            ->add('info',TextType::class, array('data_class' => null))
             ->add('image', FileType::class, array('data_class' => null));
     }/**
      * {@inheritdoc}

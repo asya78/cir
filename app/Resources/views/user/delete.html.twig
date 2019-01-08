@@ -4,6 +4,11 @@
 
     <section xmlns="http://www.w3.org/1999/html">
         <div class="container">
+            {%  for msg in app.session.flashBag.get('message') %}
+                <div class="alert alert-danger">
+                    {{ msg }}
+                </div>
+            {% endfor %}
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
                     <h1 class="page-header">{{ user.getFullName() }}</h1>
@@ -95,8 +100,8 @@
                                                             <td>{{ request.description }}</td>
                                                             <td>
                                                                 <div class="btn-group">
-                                                                    <a class="btn btn-warning" href="{{ path('requestHall_forwarding', {'id' :request.id}) }}"><i class="fa fa-forward" title="Препращане"></i></a>
-                                                                    <a class="btn btn-danger" href="{{ path('requestHall_delete', {'id' :request.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
+                                                                    <a class="btn btn-warning" href="{{ path('forwarding_requestHall', {'id' :request.id}) }}"><i class="fa fa-forward" title="Препращане"></i></a>
+                                                                    <a class="btn btn-danger" href="{{ path('delete_requestHall', {'id' :request.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
                                                                 </div>
                                                             </td>
                                                         </tr>

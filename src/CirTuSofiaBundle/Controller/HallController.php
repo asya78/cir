@@ -55,7 +55,7 @@ class HallController extends Controller
 
             $em->flush();
 
-            return $this->redirectToRoute('cir_index');
+            return $this->redirectToRoute('all_hall');
         }
 
         return $this->render('hall/create.html.twig', array('form' => $form->createView()));
@@ -170,13 +170,23 @@ class HallController extends Controller
 
             $hall->setUser($currentUser);
 
+            $requests = $this
+                ->getDoctrine()
+                ->getRepository(RequestHall::class)
+                ->allRequestsByHall($hall->getId());
+
+            if (!empty($requests)) {
+                $this->addFlash('message', 'Залата не може да бъде изтрита. Има заявки за нея.');
+                return $this->render('hall/delete.html.twig', ['form' => $form->createView(),'hall' => $hall]);
+            }
+
             $em = $this->getDoctrine()->getManager();
 
             $em->remove($hall);
 
             $em->flush();
 
-            return $this->redirectToRoute('hall_all');
+            return $this->redirectToRoute('all_hall');
         }
 
         return $this->render('hall/delete.html.twig', array('form' => $form->createView(),'hall' => $hall));
