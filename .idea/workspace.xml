@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7450c3b-4ec5-48c6-9998-2d49b46e443a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/request/view.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/hall/halls.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/hall/halls.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/hall/view.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/hall/view.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/request/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/request/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/request/delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/request/delete.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/request/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/request/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/request/requests.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/request/requests.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/RequestHallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/RequestHallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Form/RequestHallType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Form/RequestHallType.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -120,7 +108,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -163,7 +161,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/hall/create.html.twig" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/HallController.php" />
         <option value="$PROJECT_DIR$/web/css/main.css" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Form/RequestHallType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/request/create.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/request/delete.html.twig" />
@@ -175,6 +172,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/request/requests.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/request/view.html.twig" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/RequestHallController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -235,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -328,7 +327,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,22 +378,24 @@
       <workItem from="1546241563359" duration="5764000" />
       <workItem from="1546323600702" duration="2101000" />
       <workItem from="1546576841181" duration="467000" />
-      <workItem from="1546832592313" duration="632000" />
+      <workItem from="1546832592313" duration="801000" />
+      <workItem from="1546918006827" duration="234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121137000" />
+    <option name="totallyTimeSpent" value="121555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.22163388" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.2246596" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5008183" side_tool="true" weight="0.21860817" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -689,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://b14a974c-a59a-4bb9-9a48-c06d3310cea0/schema/cir/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -843,6 +836,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="41" column="74" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
         </state>
       </provider>
     </entry>
