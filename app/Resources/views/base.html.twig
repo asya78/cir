@@ -74,27 +74,23 @@
                                         <li>
                                             <a href="{{ path('view_user', {'id' :app.getUser().getId()}) }}">Профил</a>
                                         </li>
+                                        {% if app.getUser().isAdmin() %}
+                                            <li>
+                                                <a href="{{ path('all_user') }}" >Потребители</a>
+                                            </li>
+                                        {% endif %}
                                         <li>
                                             <a href="{{ path('all_hall') }}">Зали</a>
                                         </li>
-                                        {% if app.user and ( app.getUser().isLector() or app.getUser().isAdmin()) %}
                                         <li>
                                             <a href="{{ path('all_requestHall') }}">Заявки</a>
                                         </li>
-                                        {% endif %}
-                                        {% if app.user and ( app.getUser().isOperator() or app.getUser().isAdmin()) %}
+                                        {#<li>#}
+                                            {#<a href="">Заявки софтуер</a>#}
+                                        {#</li>#}
                                         <li>
-                                            <a href="">Заявки софтуер</a>
+                                            <a href="{{ path('all_problem') }}">Проблеми</a>
                                         </li>
-                                        <li>
-                                            <a href="">Проблеми</a>
-                                        </li>
-                                        {% endif %}
-                                        {% if app.user and app.getUser().isAdmin() %}
-                                        <li>
-                                            <a href="{{ path('all_user') }}" >Потребители</a>
-                                        </li>
-                                        {% endif %}
                                         <li>
                                             <a href="{{ path('security_logout') }}">Изход</a>
                                         </li>

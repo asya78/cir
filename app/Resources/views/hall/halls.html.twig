@@ -46,6 +46,7 @@
                                                 <a class="btn btn-info" href="{{ path('view_hall', {'id' :hall.id}) }}"><i class="fa fa-eye" title="Изглед"></i></a>
                                                 <a class="btn btn-default" href="{{ path('create_requestHall', {'id' :hall.id}) }}"><i class="fa fa-paper-plane" title="Заявка"></i></a>
                                                 <a class="btn btn-success" href="{{ path('schedule_hall', {'id' :hall.id}) }}"><i class="fa fa-calendar" title="График"></i></a>
+                                                <a class="btn btn-primary" href="{{ path('create_problem', {'id' :hall.id}) }}"><i class="fa fa-question" title="Проблем"></i></a>
                                                 {% if app.user and app.getUser().isAdmin() %}
                                                 <a class="btn btn-warning" href="{{ path('edit_hall', {'id' :hall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
                                                 <a class="btn btn-danger" href="{{ path('delete_hall', {'id' :hall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>

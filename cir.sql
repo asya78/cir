@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time:  8 яну 2019 в 16:18
+-- Generation Time:  9 яну 2019 в 16:14
 -- Версия на сървъра: 10.0.17-MariaDB
 -- PHP Version: 7.0.32
 
@@ -61,8 +61,18 @@ INSERT INTO `halls` (`id`, `number`, `seats`, `computers`, `laptop`, `projector`
 CREATE TABLE `problems` (
   `id` int(11) NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `hall_id` int(11) DEFAULT NULL
+  `hallId` int(11) NOT NULL,
+  `requesterId` int(11) NOT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Схема на данните от таблица `problems`
+--
+
+INSERT INTO `problems` (`id`, `description`, `hallId`, `requesterId`, `status`) VALUES
+(2, 'Прозорецът не се отваря, дръжката е счупена!', 8, 5, 'Неизпълнена'),
+(3, 'Мишката на компютър N не работи!', 2, 6, 'Неизпълнена');
 
 -- --------------------------------------------------------
 
@@ -86,13 +96,13 @@ CREATE TABLE `requests` (
 --
 
 INSERT INTO `requests` (`id`, `date`, `timeStart`, `timeEnd`, `description`, `hallId`, `status`, `requesterId`) VALUES
-(1, '2019-01-14', '08:00:00', '09:00:00', 'Тема: Автоматизирани производствени системи\r\nСпециалност: Автоматика, информационна и управляваща техника', 4, 'Чакаща', 2),
+(1, '2019-01-01', '08:00:00', '09:00:00', 'Тема: Автоматизирани производствени системи\r\nСпециалност: Автоматика, информационна и управляваща техника', 4, 'Чакаща', 2),
 (2, '2019-01-17', '14:00:00', '16:00:00', 'Тема: Компютърно моделиране на полета и процеси \r\nСпециалност: Електрически машини', 1, 'Чакаща', 5),
 (3, '2019-01-25', '10:00:00', '11:00:00', 'Тема: Компютърно конструиране на електрически машини \r\nСпециалност: Електрически машини', 5, 'Чакаща', 5),
 (4, '2019-01-21', '09:00:00', '10:00:00', 'Тема: Компютърно проектиране ;\r\nСпециалност: Инженерен дизайн', 7, 'Чакаща', 6),
 (5, '2019-01-29', '17:00:00', '18:30:00', 'Тема: Информатика I ;\r\nСпециалност: Мехатроника', 3, 'Чакаща', 6),
 (6, '2019-01-24', '15:00:00', '16:00:00', 'Тема: Информационни технологии в телекомуникациите; Специалност: Телекомуникации', 1, 'Чакаща', 7),
-(7, '2019-01-31', '08:00:00', '10:00:00', 'Тема: Мултимедийни мрежи; Специалност: Телекомуникации', 8, 'Чакаща', 7),
+(7, '2019-01-01', '08:00:00', '10:00:00', 'Тема: Мултимедийни мрежи; Специалност: Телекомуникации', 8, 'Чакаща', 7),
 (8, '2019-02-05', '09:00:00', '11:00:00', 'Тема: Измерване, контрол и комуникации в електроенергетични системи ; Специалност: Електроснабдяване, електрообзавеждане и електротранспорт', 6, 'Чакаща', 5),
 (9, '2019-01-21', '16:00:00', '17:00:00', 'Тема: Компютърно симулиране на електрически системи ; Специалност: Електрически апарати', 2, 'Чакаща', 5);
 
@@ -138,12 +148,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `password`, `fullName`, `status`) VALUES
 (1, 'admin@tu-sofia.bg', '$2y$13$MywZoX.4aQwilIml4Sg9Ce4mAOpb24tfDUA9NCjU3mFQGr0cx8gRu', 'Администратор', 1),
-(2, 'lectorFA@tu-sofia.bg', '$2y$13$FurUnjxTy0e7dZl23geljOdJWGbarw6DQicgdCatT2cRJJHrXfFua', 'Преподавател ФА', 1),
-(3, 'operator@tu-sofia.bg', '$2y$13$ne83tjakAvuBy1p.cklJwu4aKUmv/shbWj9GTjk2bXa1LvZejWU.C', 'Оператор', 1),
-(4, 'user@tu-sofia.bg', '$2y$13$IoHeeVfQJE6r.4U0AG9xOuPBV/Kx5dPcPArahKjQjfP1LDM8chi5i', 'Потребител', 1),
-(5, 'lectorEF@tu-sofia.bg', '$2y$13$x3I2JsNddHOurf9r0p29uOag28srT/nASqZwrkKC5sP45zEJGsb3i', 'Преподавател ЕФ', 1),
-(6, 'lectorMF@tu-sofia.bg', '$2y$13$dVuQgtr1cfkWb6PfRtQZ5et.R..0iIyowEkjjCWkqYegoItqbYS/6', 'Преподавател МФ', 1),
-(7, 'lectorFT@tu-sofia.bg', '$2y$13$ACQ4yzjYFqQPvTJgOvJ2ROyVRy5vAzUt1whiwrKRZnsNp2ea75IOW', 'Преподавател ФТ', 1);
+(2, 'lectorFA@tu-sofia.bg', '$2y$13$oHL40OjTRElOLL69jh/iLeLlmbSJHrejCsbVmRBZNbsUjFCM6P7cG', 'Преподавател ФА', 1),
+(3, 'operator@tu-sofia.bg', '$2y$13$WsBGnaXEtv9VJYMVdpo/De.fR59W/SNH2CsLHCFeOXBcEaIbfDBam', 'Оператор', 1),
+(4, 'user@tu-sofia.bg', '$2y$13$rhoYirRKyqHA.3ACO.vbJ.5GiX7vXA876E7XDLy9KHd8RAw.hXjl6', 'Потребител', 1),
+(5, 'lectorEF@tu-sofia.bg', '$2y$13$vcogRVsrWz/SsJ0YFvTA5OEvOrz.bNx/GF3yAvsE/PrP3aCn8Q4QG', 'Преподавател ЕФ', 1),
+(6, 'lectorMF@tu-sofia.bg', '$2y$13$FdCprNz5mQQ7OV.HHlkYEeOINH5c/fX3AoNyKYl7OH3Dtj6PTQhgq', 'Преподавател МФ', 1),
+(7, 'lectorFT@tu-sofia.bg', '$2y$13$757yjVUXgo6XC5ViD4ZLkex8mqH8c8puMVKkinAZiHij/qNgoDA1a', 'Преподавател ФТ', 1);
 
 -- --------------------------------------------------------
 
@@ -166,7 +176,7 @@ INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES
 (3, 3),
 (4, 4),
 (5, 2),
-(6, 4),
+(6, 2),
 (7, 2);
 
 --
@@ -186,7 +196,8 @@ ALTER TABLE `halls`
 --
 ALTER TABLE `problems`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `IDX_8E66624552AFCFD6` (`hall_id`);
+  ADD KEY `IDX_8E666245AA6E599B` (`hallId`),
+  ADD KEY `IDX_8E66624591EC6DA8` (`requesterId`);
 
 --
 -- Indexes for table `requests`
@@ -231,7 +242,7 @@ ALTER TABLE `halls`
 -- AUTO_INCREMENT for table `problems`
 --
 ALTER TABLE `problems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `requests`
 --
@@ -261,7 +272,8 @@ ALTER TABLE `halls`
 -- Ограничения за таблица `problems`
 --
 ALTER TABLE `problems`
-  ADD CONSTRAINT `FK_8E66624552AFCFD6` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`);
+  ADD CONSTRAINT `FK_8E66624591EC6DA8` FOREIGN KEY (`requesterId`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `FK_8E666245AA6E599B` FOREIGN KEY (`hallId`) REFERENCES `halls` (`id`);
 
 --
 -- Ограничения за таблица `requests`
