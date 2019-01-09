@@ -29,7 +29,9 @@ class User implements UserInterface
      *     message = "'{{ value }}' e невалидна ел. поща.",
      *     checkMX = true
      * )
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(
+     *     message="Попълнете полето 'ел. поща'."
+     * )
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
