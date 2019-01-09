@@ -89,7 +89,7 @@ class RequestHallController extends Controller
 
                 $requestTimeStart = (string) ($requestHall->getTimeStart()->format('H:i:s'));
 
-                $requestDateString = (string) ($requestHall->getDate()->format('Y:m:d'));
+                $requestDateString = (string) ($requestHall->getDate()->format('Y/m/d'));
 
                 $freeRequestHall = $this
                     ->getDoctrine()

@@ -16,4 +16,5 @@
 /vendor/
 /web/bundles/
 /.idea/*
-/.idea/workspace.xml
+/.idea/dataSources
+/.idea/dataSources/*

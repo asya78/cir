@@ -24,6 +24,8 @@ class UserController extends Controller
     {
         $user = new User();
 
+        $errors = null;
+
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
@@ -77,7 +79,8 @@ class UserController extends Controller
 
             return $this->redirectToRoute('security_login');
         }
-        return $this->render('user/register.html.twig');
+
+        return $this->render('user/register.html.twig',['errors'=>$errors]);
     }
 
 
@@ -224,6 +227,13 @@ class UserController extends Controller
                 $user->setPassword($passForm);
 
             }
+
+            $validator = $this->get('validator');
+
+            $errors = $validator->validate($user);
+
+            dump($errors);
+            exit;
 
             $userRoleForm = $this
                 ->getDoctrine()
