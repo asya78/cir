@@ -7,21 +7,23 @@
 
     <div class="container-fluid">
         <div class="row">
-            {%  for msg in app.session.flashBag.get('message') %}
-                <div class="alert alert-danger">
-                    {{ msg }}
-                </div>
-            {% endfor %}
             <div class="col-sm-6 login-img">
                 <div class="intro-text"></div>
             </div>
             <div class="col-sm-6">
                 <div class="row">
                     <div class="login-form">
+                        {%  if error %}
+                            <div class="alert alert-danger">
+                                {{ error.message | replace({
+                                    "Bad credentials": "Невалидна ел. поща / парола"
+                                }) }}
+                            </div>
+                        {% endif %}
                         <form name="authenticate" action="{{ path('security_login') }}" method="post">
                             <h2 class="text-center">Вход</h2>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="eл. поща" name="_username" />
+                                <input   type="text" class="form-control" value="{{ last_username }}" placeholder="eл. поща" name="_username" />
                             </div>
                             <div class="form-group">
                                 <input id="password-field" type="password" class="form-control" placeholder="парола" name="_password" />

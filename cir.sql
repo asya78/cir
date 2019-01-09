@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time:  7 яну 2019 в 14:48
+-- Generation Time:  8 яну 2019 в 16:18
 -- Версия на сървъра: 10.0.17-MariaDB
 -- PHP Version: 7.0.32
 
@@ -95,21 +95,6 @@ INSERT INTO `requests` (`id`, `date`, `timeStart`, `timeEnd`, `description`, `ha
 (7, '2019-01-31', '08:00:00', '10:00:00', 'Тема: Мултимедийни мрежи; Специалност: Телекомуникации', 8, 'Чакаща', 7),
 (8, '2019-02-05', '09:00:00', '11:00:00', 'Тема: Измерване, контрол и комуникации в електроенергетични системи ; Специалност: Електроснабдяване, електрообзавеждане и електротранспорт', 6, 'Чакаща', 5),
 (9, '2019-01-21', '16:00:00', '17:00:00', 'Тема: Компютърно симулиране на електрически системи ; Специалност: Електрически апарати', 2, 'Чакаща', 5);
-
--- --------------------------------------------------------
-
---
--- Структура на таблица `request_hall`
---
-
-CREATE TABLE `request_hall` (
-  `id` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `timeStart` time NOT NULL,
-  `timeEnd` time NOT NULL,
-  `description` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -212,12 +197,6 @@ ALTER TABLE `requests`
   ADD KEY `IDX_7B85D651AA6E599B` (`hallId`);
 
 --
--- Indexes for table `request_hall`
---
-ALTER TABLE `request_hall`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -257,12 +236,7 @@ ALTER TABLE `problems`
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `request_hall`
---
-ALTER TABLE `request_hall`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `roles`
 --
