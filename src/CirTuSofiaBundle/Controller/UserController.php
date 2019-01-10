@@ -198,6 +198,8 @@ class UserController extends Controller
 
         $userEmail = $user->getEmail();
 
+        $userPassword = $user->getPassword();
+
         if ($user === null) {
             return $this->redirectToRoute('cir_index');
         }
@@ -212,56 +214,90 @@ class UserController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && !empty($form->getData()->getFullName()) ) {
+        if ($form->isSubmitted()) {
 
-            $passForm = $this
-                ->get('security.password_encoder')
-                ->encodePassword($user, $form->getData()->getPassword());
+            if (empty($form->getData()->getFullName())) {
 
-            if ($passForm === null) {
+                $user->setEmail($userEmail);
 
-                $user->setPassword($user->getPassword());
+                $this->addFlash('message', "Полето 'Име' не може да бъде празно.");
+
+                if (empty($form->getData()->getPassword())) {
+
+                    $user->setPassword($userPassword);
+
+                } else {
+
+                    $passForm = $this
+                        ->get('security.password_encoder')
+                        ->encodePassword($user, $form->getData()->getPassword());
+
+                    $user->setPassword($passForm);
+
+                }
+                $em = $this->getDoctrine()->getManager();
+
+                $em->merge($user);
+
+                $em->flush();
+
+                return $this->render('user/edit.html.twig',
+                    array(
+                        'form' => $form->createView(),
+                        'user' => $user,
+                        'roles' => $roles,
+                        'userRole'=>$userRole
+                    )
+                );
 
             } else {
+                if (empty($form->getData()->getPassword())) {
 
-                $user->setPassword($passForm);
+                    $user->setPassword($userPassword);
 
+
+                } else {
+
+                    $passForm = $this
+                        ->get('security.password_encoder')
+                        ->encodePassword($user, $form->getData()->getPassword());
+
+                    $user->setPassword($passForm);
+
+                }
+                $userRoleForm = $this
+                    ->getDoctrine()
+                    ->getRepository(Role::class)
+                    ->findOneBy(['id'=>$form->get('roles')->getData()]);
+
+                if ($form->get('roles')->getData() !== null && $userRole !== $userRoleForm ) {
+
+                    $user->removeRole($userRole);
+
+                    $user->addRole($userRoleForm);
+                }
+
+                $user->setEmail($userEmail);
+
+                $em = $this->getDoctrine()->getManager();
+
+                $em->merge($user);
+
+                $em->flush();
+
+                if ($currentUser->isAdmin()){
+
+                    return $this->redirectToRoute('all_user', array(
+                        'user' => $user,
+                        'roles' => $roles,
+                        'userRole'=>$userRole
+                    ));
+
+                }
+
+                return $this->redirectToRoute('cir_index');
             }
 
-            $userRoleForm = $this
-                ->getDoctrine()
-                ->getRepository(Role::class)
-                ->findOneBy(['id'=>$form->get('roles')->getData()]);
-
-            if ($form->get('roles')->getData() !== null && $userRole !== $userRoleForm ) {
-
-                $user->removeRole($userRole);
-
-                $user->addRole($userRoleForm);
-            }
-
-            $user->setEmail($userEmail);
-
-            $em = $this->getDoctrine()->getManager();
-
-            $em->merge($user);
-
-            $em->flush();
-
-            if ($currentUser->isAdmin()){
-
-                return $this->redirectToRoute('all_user');
-
-            }
-
-            return $this->redirectToRoute('cir_index');
-
-
-        }
-
-        if (empty($form->getData()->getFullName())) {
-            $user->setEmail($userEmail);
-            $this->addFlash('message', "Полето 'Име' не може да бъде празно.");
         }
 
         return $this->render('user/edit.html.twig',
@@ -294,13 +330,10 @@ class UserController extends Controller
             ->getRepository(RequestHall::class)
             ->findBy(['requesterId'=> $user->getId()]);
 
-
         $requesterCount = $this
             ->getDoctrine()
             ->getRepository(RequestHall::class)
             ->countRequestsById($user->getId());
-
-
 
 //        Forward all requests of user to admin
 
@@ -314,13 +347,33 @@ class UserController extends Controller
             ->getRepository(Role::class)
             ->findOneBy(['name'=>$user->getRoles()[0]]);
 
+        $userEmail = $user->getEmail();
+
+        $userPassword = $user->getPassword();
+
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted()) {
 
             if ( intval($requesterCount) !== 0 ) {
+
+                $user->setEmail($userEmail);
+
+                if (empty($form->getData()->getPassword())) {
+
+                    $user->setPassword($userPassword);
+
+                } else {
+
+                    $passForm = $this
+                        ->get('security.password_encoder')
+                        ->encodePassword($user, $form->getData()->getPassword());
+
+                    $user->setPassword($passForm);
+
+                }
                 $this->addFlash('message','Този потребител има '. intval($requesterCount) . " заявки. Моля първо пренасочете заявките.");
                 return $this->render('user/delete.html.twig',array(
                     'form'=>$form->createView(),
@@ -331,7 +384,6 @@ class UserController extends Controller
                     'userRole'=>$userRole
                 ));
             }
-
 
             $em = $this->getDoctrine()->getManager();
 
