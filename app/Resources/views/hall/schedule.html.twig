@@ -27,7 +27,11 @@
                                     <th>Краен час</th>
                                     <th width="30%">Описание</th>
                                     <th>Заявил</th>
+                                    {% for requestsHall in requestsHalls %}
+                                    {% if (requestsHall.requesterId == app.getUser().getId() or app.getUser().isAdmin()) %}
                                     <th>Действия</th>
+                                    {% endif %}
+                                    {% endfor %}
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -39,10 +43,12 @@
                                         <td>{{ requestsHall.description }}</td>
                                         <td>{{ requestsHall.requester.fullName}}</td>
                                         <td>
+                                            {% if ((requestsHall.requesterId == app.getUser().getId() or app.getUser().isAdmin()) and "now"|date("Y/m/d") < requestsHall.date|date("Y/m/d") ) %}
                                             <div class="btn-group">
                                                 <a class="btn btn-warning" href="{{ path('edit_requestHall', {'id' :requestsHall.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
                                                 <a class="btn btn-danger" href="{{ path('delete_requestHall', {'id' :requestsHall.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
                                             </div>
+                                            {%  endif %}
                                         </td>
                                     </tr>
                                 {% endfor %}

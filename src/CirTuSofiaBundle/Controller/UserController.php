@@ -212,7 +212,7 @@ class UserController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && !empty($form->getData()->getFullName()) ) {
 
             $passForm = $this
                 ->get('security.password_encoder')
@@ -227,13 +227,6 @@ class UserController extends Controller
                 $user->setPassword($passForm);
 
             }
-
-            $validator = $this->get('validator');
-
-            $errors = $validator->validate($user);
-
-            dump($errors);
-            exit;
 
             $userRoleForm = $this
                 ->getDoctrine()
@@ -264,6 +257,11 @@ class UserController extends Controller
             return $this->redirectToRoute('cir_index');
 
 
+        }
+
+        if (empty($form->getData()->getFullName())) {
+            $user->setEmail($userEmail);
+            $this->addFlash('message', "Полето 'Име' не може да бъде празно.");
         }
 
         return $this->render('user/edit.html.twig',

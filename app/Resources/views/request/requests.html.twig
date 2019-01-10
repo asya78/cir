@@ -32,7 +32,7 @@
                                 </thead>
                                 <tbody>
                                 {% for request in requests %}
-                                    {% if request.requesterId == app.getUser().getId() or app.getUser().isAdmin() %}
+                                    {% if (request.requesterId == app.getUser().getId() or app.getUser().isAdmin()) %}
                                     <tr>
                                         <td>{{ request.hall.number }}</td>
                                         <td>{{ request.date|date("Y/m/d") }}</td>
@@ -43,9 +43,11 @@
                                         <td>
                                             <div class="btn-group">
                                                 <a class="btn btn-info" href="{{ path('view_requestHall', {'id' :request.id}) }}"><i class="fa fa-eye" title="Изглед"></i></a>
+                                                {% if "now"|date("Y/m/d") < request.date|date("Y/m/d") %}
                                                 <a class="btn btn-warning" href="{{ path('edit_requestHall', {'id' :request.id}) }}"><i class="fa fa-edit" title="Редактиране"></i></a>
                                                 <a class="btn btn-danger" href="{{ path('delete_requestHall', {'id' :request.id}) }}"><i class="fa fa-trash" title="Изтриване"></i></a>
-                                            </div>
+                                                {% endif %}
+                                             </div>
                                         </td>
                                     </tr>
                                     {% endif %}

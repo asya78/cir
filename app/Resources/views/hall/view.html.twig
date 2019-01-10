@@ -12,9 +12,11 @@
 
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-xs-12 col-sm-7 col-sm-offset-2 text-right">
-                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_LECTOR') %}
-                    <a class="btn btn-default" href="{{ path('create_requestHall', {'id': hall.id}) }}"><i class="fa fa-paper-plane"></i> Заявка</a>
-                    <a class="btn btn-warning" href="{{ path('edit_hall',{'id': hall.id}) }}"><i class="fa fa-edit"></i> Редактиране</a>
+                    {% if app.user and ( app.getUser().isLector() or app.getUser().isAdmin()) %}
+                        <a class="btn btn-default" href="{{ path('create_requestHall', {'id': hall.id}) }}"><i class="fa fa-paper-plane"></i> Заявка</a>
+                    {% endif %}
+                    {% if app.user and app.getUser().isAdmin() %}
+                        <a class="btn btn-warning" href="{{ path('edit_hall',{'id': hall.id}) }}"><i class="fa fa-edit"></i> Редактиране</a>
                     {% endif %}
                     <a class="btn btn-default" href="{{ path('all_hall') }}"><i class="fa fa-arrow-circle-o-left"></i> Назад</a>
                 </div>

@@ -3,7 +3,7 @@
 {% block body %}
     <section>
         <div class="container ">
-            <div class="well col-xs-8 col-xs-offset-2">
+            <div class="well col-xs-12 col-lg-8 col-lg-offset-2">
                 {%  for msg in app.session.flashBag.get('message') %}
                     <div class="alert alert-danger">
                         {{ msg }}
@@ -14,8 +14,8 @@
                         <legend>Заявка на зала</legend>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="hallId">Номер на зала:</label>
-                            <div class="col-xs-4">
+                            <label class="col-xs-6 col-sm-5 control-label" for="hallId">Номер на зала:</label>
+                            <div class="col-xs-6 col-sm-4">
                                     {% if hall.id is empty %}
                                         <select class="form-control" id="hallId" name="hallId">
                                             <option value="">Избери</option>
@@ -32,29 +32,29 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="date">Дата:</label>
-                            <div class="col-xs-4">
+                            <label class="col-xs-6 col-sm-5 control-label" for="date">Дата:</label>
+                            <div class="col-xs-6 col-sm-4">
                                 <input type="date" class="form-control" id="date" name="date">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="timeStart">Начален час :</label>
-                            <div class="col-xs-4">
+                            <label class="col-xs-6 col-sm-5 control-label" for="timeStart">Начален час :</label>
+                            <div class="col-xs-6 col-sm-4">
                                 <input type="time" class="form-control" id="timeStart" placeholder="" name="timeStart">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="timeEnd">Краен час :</label>
-                            <div class="col-xs-4">
+                            <label class="col-xs-6 col-sm-5 control-label" for="timeEnd">Краен час :</label>
+                            <div class="col-xs-6 col-sm-4">
                                 <input type="time" class="form-control" id="timeStart" placeholder="" name="timeEnd">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-xs-5 control-label" for="description">Допълнителна информация:</label>
-                            <div class="col-xs-7">
+                            <label class="col-xs-12 col-sm-5 control-label" for="description">Допълнителна информация:</label>
+                            <div class="col-xs-12 col-sm-7 col-md-5 col-lg-4">
                                 <textarea  class="form-control" rows="6" id="description" name="description"></textarea>
                             </div>
                         </div>

@@ -29,7 +29,9 @@ class User implements UserInterface
      *     message = "'{{ value }}' e невалидна ел. поща.",
      *     checkMX = true
      * )
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(
+     *     message="Попълнете полето 'ел. поща'."
+     * )
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
@@ -72,6 +74,14 @@ class User implements UserInterface
 
     /**
      * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="CirTuSofiaBundle\Entity\Problem", mappedBy="requester")
+     */
+    private $problems;
+
+
+    /**
+     * @var ArrayCollection
      * Many Users have Many Roles.
      * @ORM\ManyToMany(targetEntity="CirTuSofiaBundle\Entity\Role", inversedBy="users")
      * @ORM\JoinTable(name="users_roles")
@@ -91,6 +101,8 @@ class User implements UserInterface
         $this->halls = new ArrayCollection();
 
         $this->requests = new ArrayCollection();
+
+        $this->problems = new ArrayCollection();
 
         $this->roles = new ArrayCollection();
 
@@ -236,17 +248,17 @@ class User implements UserInterface
 
     public function isLector()
     {
-        return in_array("ROLE_LECTOR", $this->getRoles()) or $this->isAdmin();
+        return in_array("ROLE_LECTOR", $this->getRoles());
     }
 
     public function isOperator()
     {
-        return in_array("ROLE_OPERATOR", $this->getRoles()) or $this->isAdmin();
+        return in_array("ROLE_OPERATOR", $this->getRoles());
     }
 
     public function isUser()
     {
-        return in_array("ROLE_USER", $this->getRoles()) or $this->isAdmin();
+        return in_array("ROLE_USER", $this->getRoles());
     }
 
     /**
