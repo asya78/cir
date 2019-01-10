@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php" description="/**" line="270" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7450c3b-4ec5-48c6-9998-2d49b46e443a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/RequestHallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/RequestHallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php" afterDir="false" />
-    </list>
+    <list default="true" id="b7450c3b-4ec5-48c6-9998-2d49b46e443a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/cache/" />
@@ -107,14 +104,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="235" column="17" selection-start-line="235" selection-start-column="17" selection-end-line="235" selection-end-column="17" />
+            <state relative-caret-position="385">
+              <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
               <folding>
                 <element signature="e#47#87#0#PHP" expanded="true" />
                 <element signature="e#1327#1352#0#PHP" expanded="true" />
                 <element signature="e#1463#1488#0#PHP" expanded="true" />
                 <element signature="e#2240#2265#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/user/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="23" column="142" selection-start-line="23" selection-start-column="142" selection-end-line="23" selection-end-column="142" />
             </state>
           </provider>
         </entry>
@@ -194,7 +200,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/user/view.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/register.html.twig" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/app/Resources/views/user/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Repository/RequestHallRepository.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/delete.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/create.html.twig" />
@@ -219,6 +224,7 @@
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/RequestHallController.php" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Form/UserType.php" />
         <option value="$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/user/edit.html.twig" />
       </list>
     </option>
   </component>
@@ -438,7 +444,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126691000" />
+    <option name="totallyTimeSpent" value="127085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -644,20 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="123" selection-start-line="51" selection-start-column="123" selection-end-line="51" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="7" selection-start-line="3" selection-start-column="4" selection-end-line="71" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="17" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -877,10 +869,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="142" selection-start-line="23" selection-start-column="142" selection-end-line="23" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CirTuSofiaBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="235" column="17" selection-start-line="235" selection-start-column="17" selection-end-line="235" selection-end-column="17" />
+        <state relative-caret-position="385">
+          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
           <folding>
             <element signature="e#47#87#0#PHP" expanded="true" />
             <element signature="e#1327#1352#0#PHP" expanded="true" />
