@@ -4,6 +4,7 @@ namespace CirTuSofiaBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Hall
@@ -24,35 +25,52 @@ class Hall
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(
+     *     message="Моля попълнете полето 'Име на зала'"
+     * )
+     * @Assert\Regex(
+     *     pattern="^[A-Z0-9]{4}$",
+     *     match="true",
+     *     message="Невалидно име на зала - само големи букви и цифри, до 4 символа."
+     * )
      * @ORM\Column(name="number", type="string", length=255, unique=true)
      */
     private $number;
 
     /**
      * @var int
-     *
+     * @Assert\Range(
+     *     min=1,
+     *     minMessage="Залата може да има най-малко 1 място."
+     * )
      * @ORM\Column(name="seats", type="integer")
      */
     private $seats;
 
     /**
      * @var int
-     *
+     * @Assert\Range(
+     *     min=1,
+     *     minMessage="Залата може да има най-малко 1 компютър."
+     * )
      * @ORM\Column(name="computers", type="integer")
      */
     private $computers;
 
     /**
      * @var bool
-     *
+     * @Assert\NotBlank(
+     *     message="Моля отбележете има ли възможност за внасяне на лаптоп."
+     * )
      * @ORM\Column(name="laptop", type="boolean")
      */
     private $laptop;
 
     /**
      * @var bool
-     *
+     * @Assert\NotBlank(
+     *     message="Моля отбележете има ли възможност за ползване на проектор."
+     * )
      * @ORM\Column(name="projector", type="boolean")
      */
     private $projector;
@@ -67,6 +85,7 @@ class Hall
     /**
      * @ORM\Column(name="image", type="string", nullable=false)
      * @var string
+     * @Assert\
      */
     private $image;
 

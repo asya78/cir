@@ -2,6 +2,7 @@
 
 namespace CirTuSofiaBundle\Controller;
 
+
 use CirTuSofiaBundle\Entity\Hall;
 use CirTuSofiaBundle\Entity\RequestHall;
 use CirTuSofiaBundle\Entity\User;
@@ -10,14 +11,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
 class RequestHallController extends Controller
 {
     /**
      * @Route("/requestHall/create", name="create_requestHall")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')" )
-     * @param Request $request
+     * @param $request
      * @return \Symfony\Component\HttpFoundation\Response
+     * @throws
      */
     public function createAction(Request $request)
     {
